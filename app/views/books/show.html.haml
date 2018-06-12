@@ -1,0 +1,6 @@
+%h1
+  = image_tag @book.image_path
+  = @book.name
+  .small
+    = @book.author
+= link_to "Все книги", books_path
