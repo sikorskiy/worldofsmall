@@ -2,20 +2,19 @@
   .navbar.navbar-fixed-top
     .navbar-inner
       .container
-        %a.brand.logo{href: "index.html"}
-          = image_tag "img/logo_middle.png"
+        = link_to image_tag("img/logo_middle.png"), root_path, class: "brand logo"
         %div
           %nav
             %ul.nav.topnav
               %li.success
-                %a Home
+                = link_to "Главная страница", root_path
               %li.primary
-                %a Features
+                %a Wishlist
               %li.danger
-                %a Pages
+                = link_to "Все книги", books_path
               %li.warning.active
-                %a Portfolio
+                = link_to "Новая книга", new_book_path
               %li.info
-                %a Blogs
+                %a В разработке
               %li.inverse
-                %a Contacts
+                = link_to "О проекте", about_path

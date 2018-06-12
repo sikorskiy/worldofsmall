@@ -3,6 +3,10 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+  def about
+
+  end
+
   def create
     @book = Book.create(book_params)
     if @book.errors.any?
