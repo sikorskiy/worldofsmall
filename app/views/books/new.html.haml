@@ -1,24 +1,42 @@
-%h1
-  Создание новой книги
-= form_for @book do |f|
-  .form-group
-    = label_tag :author, "Автор: "
-    = f.text_field :author, placeholder: "Автор книги", class: "form-control"
-  .form-group
-    = label_tag :name, "Название: "
-    = f.text_field :name, placeholder: "Название книги", class: "form-control"
-  .form-group
-    = label_tag :translator, "Переводчик: "
-    = f.text_field :translator, placeholder: "Переводчик", class: "form-control"
-  .form-group
-    = label_tag :illustrator, "Иллюстратор: "
-    = f.text_field :illustrator, placeholder: "Иллюстратор", class: "form-control"
-  .form-group
-    = label_tag :publishing_house, "Издательство: "
-    = f.text_field :publishing_house, placeholder: "Издательство", class: "form-control"
-  .form-group
-    = label_tag :creation_year, "Год написания: "
-    = f.text_field :creation_year, placeholder: "Год написания книги", class: "form-control"
+%section#subintro
+  .jumbotron.subhead#overview
+    .container
+      .row
+        .span8
+          %h3
+            Создание новой книги
+          %p
+            Все поля важны, заполняйте их максимально внимательно
+        .span4
+          .input-append
+            %form.form-search
+              %input.input-medium.search-query{type: "text"}
+              %button.btn.btn-inverse{type: "submit"}
+                Пока не работает
+.container
+  .row
+    .span12
+      %h1
+        Создание новой книги
+      = form_for @book do |f|
+        .form-group
+          = label_tag :author, "Автор: "
+          = f.text_field :author, placeholder: "Автор книги", class: "form-control"
+        .form-group
+          = label_tag :name, "Название: "
+          = f.text_field :name, placeholder: "Название книги", class: "form-control"
+        .form-group
+          = label_tag :translator, "Переводчик: "
+          = f.text_field :translator, placeholder: "Переводчик", class: "form-control"
+        .form-group
+          = label_tag :illustrator, "Иллюстратор: "
+          = f.text_field :illustrator, placeholder: "Иллюстратор", class: "form-control"
+        .form-group
+          = label_tag :publishing_house, "Издательство: "
+          = f.text_field :publishing_house, placeholder: "Издательство", class: "form-control"
+        .form-group
+          = label_tag :creation_year, "Год написания: "
+          = f.text_field :creation_year, placeholder: "Год написания книги", class: "form-control"
 
-  = f.submit "Сохранить книгу", class: "btn btn-info"
+        = f.submit "Сохранить книгу", class: "btn btn-info"
 

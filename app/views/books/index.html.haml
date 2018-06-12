@@ -1,32 +1,51 @@
-%table.table.table-striped.table-condensed.table-bordered
-  %tr
-    %th
-      Название книги
-    %th
-      Автор
-    %th
-      Иллюстратор
-    %th
-      Переводчик
-    %th
-      Год создания
-    %th
-      Издательство
-  - @books.each do |b|
-    %tr
-      %td
-        = link_to b.name, book_path(b)
-      %td
-        = b.author
-      %td
-        = b.illustrator
-      %td
-        = b.translator
-      %td
-        = b.creation_year
-      %td
-        = b.publishing_house
-= link_to "Создать новую книгу", new_book_path
+%section#subintro
+  .jumbotron.subhead#overview
+    .container
+      .row
+        .span8
+          %h3
+            Все книги
+          %p
+            Пока это все книги, которые у нас описаны
+        .span4
+          .input-append
+            %form.form-search
+              %input.input-medium.search-query{type: "text"}
+              %button.btn.btn-inverse{type: "submit"}
+                Пока не работает
+
+.container
+  .row
+    .span12
+      %table.table.table-striped.table-condensed.table-bordered
+        %tr
+          %th
+            Название книги
+          %th
+            Автор
+          %th
+            Иллюстратор
+          %th
+            Переводчик
+          %th
+            Год создания
+          %th
+            Издательство
+        - @books.each do |b|
+          %tr
+            %td
+              = link_to b.name, book_path(b)
+            %td
+              = b.author
+            %td
+              = b.illustrator
+            %td
+              = b.translator
+            %td
+              = b.creation_year
+            %td
+              = b.publishing_house
+      = link_to "Создать новую книгу", new_book_path
 
 
 
