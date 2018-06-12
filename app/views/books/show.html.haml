@@ -1,5 +1,17 @@
-%h1
-  = @book.name
-  .small
-    = @book.author
+%section#subintro
+  .jumbotron.subhead#overview
+    .container
+      .row
+        .span8
+          %h3
+            = @book.name
+          %p
+            = @book.author
+        .span4
+          .input-append
+            %form.form-search
+              %input.input-medium.search-query{type: "text"}
+              %button.btn.btn-inverse{type: "submit"}
+                Пока не работает
+                  
 = link_to "Все книги", books_path
