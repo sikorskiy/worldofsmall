@@ -1,12 +1,50 @@
 %section#maincontent
   .container
-    .row
+    .row-fluid
       .span12
-        .tabbable.tabs-left
-          %ul.nav.nav-tabs
-            %li.active
+        .btn-group.filter-category
+          %a.btn.btn-success
+            Выберите категорию
+          %a.btn.btn-success.dropdown-toggle{"data-toggle": "dropdown"}
+            %span.caret
+          %ul.dropdown-menu.filter
+            %li.all.active
               %a{"data-toggle": "tab"} Все категории
-            %li
+            %li.web
               %a{"data-toggle": "tab"} 1-2 года
-            %li
+            %li.brand
               %a{"data-toggle": "tab"} 2-3 года
+        .pagination.pagination-right
+          %ul
+            %li
+              %a Prev
+            %li
+              %a 1
+            %li.active
+              %a 2
+            %li
+              %a 3
+            %li
+              %a 4
+            %li
+              %a Next
+    .row
+      .portfolio-area.da-thumbs
+        %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
+          .span3
+            .thumbnail
+              .image-wrapp
+                = image_tag "Gruffalo.png"
+              .caption
+                %h4
+                  %a Груффало
+                %p Рассказ про мышонка, который обладал великолепными навыками ведения переговоров и умел быстро ориентироваться в сложных ситуациях
+        %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
+          .span3
+            .thumbnail
+              .image-wrapp
+                = image_tag "Elmer.png"
+              .caption
+                %h4
+                  %a Элмер
+                %p Добрая книжка про разноцветного слона Элмера, который пытается быть как все. Красочная и веселая! Первая из 15 книг в серии.
