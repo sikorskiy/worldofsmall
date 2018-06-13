@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aba87c5d-1e82-4961-a4a0-04367ff7cb00" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/Catterpilar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_maincontent.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_maincontent.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -78,11 +76,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_maincontent.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_maincontent.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_maincontent.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="512">
               <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -135,7 +142,6 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_main_content.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/books_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/books/about.html.haml" />
         <option value="$PROJECT_DIR$/app/views/layouts/_template_navigation.html.haml" />
         <option value="$PROJECT_DIR$/app/views/books/new.html.haml" />
@@ -143,6 +149,7 @@
         <option value="$PROJECT_DIR$/app/views/books/show.html.haml" />
         <option value="$PROJECT_DIR$/app/views/books/home.html.haml" />
         <option value="$PROJECT_DIR$/app/views/layouts/_maincontent.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -411,12 +418,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528658508792</updated>
       <workItem from="1528658510940" duration="25031000" />
-      <workItem from="1528872321822" duration="42000" />
+      <workItem from="1528872321822" duration="1260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32009000" />
+    <option name="totallyTimeSpent" value="33227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="798" extended-state="0" />
@@ -567,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -677,6 +677,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
