@@ -30,6 +30,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+gem 'fog-aws'
 
 
 # Use ActiveStorage variant
