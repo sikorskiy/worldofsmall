@@ -45,6 +45,6 @@
                       = link_to b.name, book_path(b)
                   %p
                     - if b.info.nil?
-                      = ENV['AWS_ACCESS_KEY_ID']
+                      = b.author
                     - else
-                      = ENV['AWS_ACCESS_KEY_ID']
+                      = b.info[0..50] + "..."
