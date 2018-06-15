@@ -31,6 +31,8 @@
             Год создания
           %th
             Издательство
+          %th
+            Редактировать
         - @books.each do |b|
           %tr
             %td
@@ -45,6 +47,9 @@
               = b.creation_year
             %td
               = b.publishing_house
+            %td
+              %span.glyphicon.glyphicon-pencil
+              = link_to "Правка", edit_book_path(b)
       = link_to "Создать новую книгу", new_book_path
 
 
