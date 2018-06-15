@@ -35,11 +35,11 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.limit(8)
   end
 
   def home
-
+    @books = Book.all
   end
 
   private

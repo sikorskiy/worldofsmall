@@ -30,30 +30,18 @@
               %a Next
     .row
       .portfolio-area.da-thumbs
-        %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
-          .span3
-            .thumbnail
-              .image-wrapp
-                = image_tag "Gruffalo.png"
-              .caption
-                %h4
-                  %a Груффало
-                %p Рассказ про мышонка, который обладал великолепными навыками ведения переговоров и умел быстро ориентироваться в сложных ситуациях
-        %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
-          .span3
-            .thumbnail
-              .image-wrapp
-                = image_tag "Elmer.png"
-              .caption
-                %h4
-                  %a Элмер
-                %p Добрая книжка про разноцветного слона Элмера, который пытается быть как все. Красочная и веселая! Первая из 15 книг в серии.
-        %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
-          .span3
-            .thumbnail
-              .image-wrapp
-                = image_tag "Catterpilar.png"
-              .caption
-                %h4
-                  %a Очень голодная гусеница
-                %p Очень простая, но одна из самых любимых книг ребенка. Про гусеницу, бабочку, про дни недели и счет.
+        - @books.each do |b|
+          %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
+            .span3
+              .thumbnail
+                .image-wrapp
+                  - if b.image?
+                    = image_tag b.image.url
+                  -else
+                    = image_tag "Noimage.png"
+                .caption
+                  %h5
+                    %a
+                      = b.name
+                  %p
+                    = b.author
