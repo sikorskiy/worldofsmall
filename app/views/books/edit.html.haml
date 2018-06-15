@@ -36,6 +36,9 @@
           = label_tag :creation_year, "Год написания: "
           = f.text_field :creation_year, placeholder: "Год написания книги", class: "form-control"
         .form-group
+          = label_tag :info, "Описание: "
+          = f.text_area :info, placeholder: "Описание книги", class: "form-control"
+        .form-group
           = label_tag :image, "Изображение"
           = f.file_field :image, class: "form-control"
         .form-group
