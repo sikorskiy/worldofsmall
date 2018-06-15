@@ -23,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <caret line="15" column="70" lean-forward="true" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -152,18 +152,20 @@
             <path>
               <item name="worldofsmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="worldofsmall" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="worldofsmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="worldofsmall" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="initializers" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="worldofsmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="worldofsmall" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,16 +324,15 @@
       <workItem from="1528905348330" duration="2183000" />
       <workItem from="1529046810377" duration="4623000" />
       <workItem from="1529062831581" duration="1544000" />
-      <workItem from="1529084521011" duration="7011000" />
+      <workItem from="1529084521011" duration="7214000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51088000" />
+    <option name="totallyTimeSpent" value="51291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="798" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -639,7 +640,7 @@
     <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <caret line="15" column="70" lean-forward="true" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
         </state>
       </provider>
     </entry>
