@@ -42,6 +42,6 @@
                 .caption
                   %h5
                     %a
-                      = b.name
+                      = link_to b.name, book_path(b)
                   %p
                     = b.author

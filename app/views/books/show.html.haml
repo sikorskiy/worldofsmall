@@ -14,5 +14,9 @@
               %button.btn.btn-inverse{type: "submit"}
                 Пока не работает
 .container
-  = image_tag @book.image.thumb.url
+  - if @book.image?
+    = image_tag @book.image.url
+  - else
+    = image_tag "Noimage.png"
+  %br
   = link_to "Все книги", books_path
