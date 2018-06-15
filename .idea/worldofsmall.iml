@@ -43,7 +43,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.3.0, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.3.7, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.4.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.1, RVM: ruby-2.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.2, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v10.0.2, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.2.1, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.10.0, RVM: ruby-2.4.2) [gem]" level="application" />
@@ -73,7 +73,6 @@
     <orderEntry type="library" scope="PROVIDED" name="ipaddress (v0.8.3, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.7.0, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.3, RVM: ruby-2.4.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.1.0, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.2, RVM: ruby-2.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.0, RVM: ruby-2.4.2) [gem]" level="application" />
