@@ -4,7 +4,7 @@
       .row
         .span8
           %h3
-            Создание новой книги
+            Редактирование книги
           %p
             Все поля важны, заполняйте их максимально внимательно
         .span4
@@ -38,7 +38,9 @@
         .form-group
           = label_tag :image, "Изображение"
           = f.file_field :image, class: "form-control"
-        - if f.object.image?
-          = image_tag f.object.image.thumb.url
+        .form-group
+          - if f.object.image?
+            = image_tag f.object.image.thumb.url, style: "margin-bottom: 5px;"
+
         = f.submit "Сохранить книгу", class: "btn btn-info"
 

@@ -13,5 +13,6 @@
               %input.input-medium.search-query{type: "text"}
               %button.btn.btn-inverse{type: "submit"}
                 Пока не работает
-                  
-= link_to "Все книги", books_path
+.container
+  = image_tag @book.image.thumb.url
+  = link_to "Все книги", books_path

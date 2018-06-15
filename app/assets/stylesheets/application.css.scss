@@ -6,6 +6,7 @@
 @import "template/style";
 @import "template/success";
 @import "template/overwrite";
+@import "books";
 
 
 /*
@@ -23,4 +24,3 @@
  *= require_tree .
  *= require_self
  */
-
