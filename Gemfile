@@ -28,7 +28,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'haml'
 gem 'haml-rails'
-gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
 gem 'mini_magick', '~> 4.3'
 gem 'fog-aws'
 
