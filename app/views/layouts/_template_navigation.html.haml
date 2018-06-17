@@ -15,6 +15,9 @@
               %li.warning.active
                 = link_to "Новая книга", new_book_path
               %li.info
-                %a В разработке
-              %li.inverse
                 = link_to "О проекте", about_path
+              %li.inverse
+                - if logged_in?
+                  = link_to current_user.name + " " + current_user.lastname, user_path(current_user)
+                - else
+                  = link_to "Вход", login_path
