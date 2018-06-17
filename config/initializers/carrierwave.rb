@@ -10,17 +10,15 @@ CarrierWave.configure do |config|
       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
       :region                => 'us-east-2'
   }
+  config.storage = :fog
 
-  if Rails.env.test? || Rails.env.cucumber?
-    config.storage = :file
+  if Rails.env.test? || Rails.env.development?
     config.enable_processing = false
     config.root = "#{Rails.root}/tmp"
+    config.fog_directory    = 'worldofsmall-assets'
   else
-    config.storage = :fog
+    config.fog_directory    = ENV['S3_BUCKET_NAME']
   end
 
   config.cache_dir = "#{Rails.root}/tmp/uploads"
-  config.fog_directory    = ENV['S3_BUCKET_NAME']
-  #config.s3_access_policy = :public_read                          # Generate http:// urls. Defaults to :authenticated_read (https://)
-  #config.fog_host         = "#{ENV['S3_ASSET_URL']}/#{ENV['S3_BUCKET_NAME']}"
-end
+ end

@@ -1,0 +1,13 @@
+= render partial: "layouts/header", locals: {big_text: "Введите вашу почту и пароль", small_text: "Только зарегистрированные пользователи могут оставлять комментарии и создавать книги"}
+.container
+  .row
+    .span12
+      = form_for(:session, url: login_path) do |f|
+        .form-group
+          = label_tag :email, "Почта: "
+          = f.text_field :email, placeholder: "Ваша почта", class: "form-control"
+        .form-group
+          = label_tag :password, "Пароль: "
+          = f.password_field :password, placeholder: "Ваш пароль", class: "form-control"
+        = f.submit "Сохранить книгу", class: "btn btn-info"
+

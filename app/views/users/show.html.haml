@@ -1,0 +1,6 @@
+= render partial: "layouts/header", locals: {big_text: "Информация о профиле", small_text: "Дата создания профиля: #{@user.created_at}"}
+.container
+  %h1
+    = @user.name + " " + @user.lastname
+  %h4
+    = @user.email

@@ -1,18 +1,4 @@
-%section#subintro
-  .jumbotron.subhead#overview
-    .container
-      .row
-        .span8
-          %h3
-            Создание новой книги
-          %p
-            Все поля важны, заполняйте их максимально внимательно
-        .span4
-          .input-append
-            %form.form-search
-              %input.input-medium.search-query{type: "text"}
-              %button.btn.btn-inverse{type: "submit"}
-                Пока не работает
+= render partial: "layouts/header", locals: {big_text: "Создание новой книги", small_text: "Заполняйте все поля аккуратно"}
 .container
   .row
     .span12
