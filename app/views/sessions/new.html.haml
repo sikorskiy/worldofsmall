@@ -11,4 +11,8 @@
           = label_tag :password, "Пароль: "
           = f.password_field :password, placeholder: "Ваш пароль", class: "form-control"
         = f.submit "Войти", class: "btn btn-info"
+      %p
+        Не зарегистрированы?
+        = link_to "Нажмите", signup_path
+        для регистрации.
 

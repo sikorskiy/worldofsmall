@@ -919,15 +919,15 @@ ul.check-white li {
 }
 
 article.blog-post{
-	padding-bottom:20px;
-	margin-bottom:30px;
+	padding-bottom:0px;
+	margin-bottom:0px;
 	border-bottom:1px solid #eeeeee;
 }
 
 article .headline{
 	float:left;
 	width:100%;
-	margin-bottom:25px;
+	margin-bottom:5px;
 }
 
 article .headline h4{
@@ -939,7 +939,7 @@ article .headline h4{
 
 article  span.comment{
 	float:right;
-	margin-top:5px;
+	margin-top:2px;
 }
 
 article button.btn{
@@ -1102,9 +1102,9 @@ a.commentlink {
 }
 
 .comment-post{
-	border-top:1px solid #eeeeee;
-	margin-top:30px;
-	padding-top:20px;
+	border-top:0px solid #eeeeee;
+	margin-top:10px;
+	padding-top:10px;
 }
 
 .comment-form{

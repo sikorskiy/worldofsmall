@@ -1,0 +1,24 @@
+- content_for :bigtext, "Регистрация нового пользователя"
+- content_for :smalltext, "Это позволит вам оставлять отзывы и оценивать книги"
+
+.container
+  .row
+    .span12
+      = form_for @user do |f|
+        .form-group
+          = label_tag :name, "Имя: "
+          = f.text_field :name, placeholder: "Введите имя", class: "form-control"
+        .form-group
+          = label_tag :lastname, "Фамилия: "
+          = f.text_field :lastname, placeholder: "Введите фамилию", class: "form-control"
+        .form-group
+          = label_tag :email, "Почта: "
+          = f.text_field :email, placeholder: "Введите почту", class: "form-control"
+        .form-group
+          = label_tag :password, "Пароль: "
+          = f.password_field :password, placeholder: "Введите пароль", class: "form-control"
+        .form-group
+          = label_tag :password_confirmation, "Подтверждение: "
+          = f.password_field :password_confirmation, placeholder: "Подтвердите пароль", class: "form-control"
+        = f.submit "Создать пользователя", class: "btn btn-info"
+
