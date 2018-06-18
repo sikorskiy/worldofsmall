@@ -1,4 +1,5 @@
-= render partial: "layouts/header", locals: {big_text: "Введите вашу почту и пароль", small_text: "Только зарегистрированные пользователи могут оставлять комментарии и создавать книги"}
+- content_for :bigtext, "Введите вашу почту и пароль"
+- content_for :smalltext, "Только зарегистрированные пользователи могут оставлять комментарии и создавать книги"
 .container
   .row
     .span12
@@ -9,5 +10,5 @@
         .form-group
           = label_tag :password, "Пароль: "
           = f.password_field :password, placeholder: "Ваш пароль", class: "form-control"
-        = f.submit "Сохранить книгу", class: "btn btn-info"
+        = f.submit "Войти", class: "btn btn-info"
 

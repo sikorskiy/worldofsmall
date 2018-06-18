@@ -1,19 +1,5 @@
-%section#subintro
-  .jumbotron.subhead#overview
-    .container
-      .row
-        .span8
-          %h3
-            Все книги
-          %p
-            Пока это все книги, которые у нас описаны
-        .span4
-          .input-append
-            %form.form-search
-              %input.input-medium.search-query{type: "text"}
-              %button.btn.btn-inverse{type: "submit"}
-                Пока не работает
-
+- content_for :bigtext, "Весь список книг"
+- content_for :smalltext, "Пока это все книги, но они постоянно пополняются"
 .container
   .row
     .span12

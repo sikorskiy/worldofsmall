@@ -1,18 +1,5 @@
-%section#subintro
-  .jumbotron.subhead#overview
-    .container
-      .row
-        .span8
-          %h3
-            О проекте
-          %p
-            Почему решили создать и кто мы такие?
-        .span4
-          .input-append
-            %form.form-search
-              %input.input-medium.search-query{type: "text"}
-              %button.btn.btn-inverse{type: "submit"}
-                Пока не работает
+- content_for :bigtext, "О проекте"
+- content_for :smalltext, "Почему решили создать и кто мы такие?"
 
 .container
   .row
