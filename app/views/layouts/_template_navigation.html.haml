@@ -18,6 +18,6 @@
                 = link_to "О проекте", about_path
               %li.inverse
                 - if logged_in?
-                  = link_to current_user.name + " " + current_user.lastname, user_path(current_user)
+                  = link_to current_user.name, user_path(current_user)
                 - else
                   = link_to "Вход", login_path

@@ -1,4 +1,5 @@
-= render partial: "layouts/header", locals: {big_text: "Информация о профиле", small_text: "Дата создания профиля: #{@user.created_at}"}
+- content_for :bigtext, "Информация о профиле"
+- content_for :smalltext, "Дата создания профиля: #{@user.created_at.to_s}"
 .container
   %h1
     = @user.name + " " + @user.lastname

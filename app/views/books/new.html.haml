@@ -1,4 +1,5 @@
-= render partial: "layouts/header", locals: {big_text: "Создание новой книги", small_text: "Заполняйте все поля аккуратно"}
+- content_for :bigtext, "Создание новой книги"
+- content_for :smalltext, "Заполняйте все поля аккуратно"
 .container
   .row
     .span12

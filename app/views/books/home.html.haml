@@ -1,18 +1,5 @@
-%section#subintro
-  .jumbotron.subhead#overview
-    .container
-      .row
-        .span8
-          %h3
-            Книги для малышей
-          %p
-            Основательный подход к детским книгам
-        .span4
-          .input-append
-            %form.form-search
-              %input.input-medium.search-query{type: "text"}
-              %button.btn.btn-inverse{type: "submit"}
-                Пока не работает
+- content_for :bigtext, "Книги для малышей"
+- content_for :smalltext, "Основательный подход к детским книгам"
 
 = render "layouts/maincontent"
 
