@@ -2,9 +2,69 @@
 - content_for :smalltext, @book.author
 
 .container
-  - if @book.image?
-    = image_tag @book.image.url
-  - else
-    = image_tag "Noimage.png"
-  %br
-  = link_to "Все книги", books_path
+  .row
+    .span4
+      .aside
+        %h4.heading-success
+          = @book.name
+        - if @book.image?
+          = image_tag @book.image.url
+        - else
+          = image_tag "Noimage.png"
+        %h5.heading-success
+          ="&nbsp;".html_safe
+        %ul.unstyled
+          %li
+            %strong
+              Автор:
+            = @book.author
+          %li
+            %strong
+              Иллюстратор:
+            = @book.illustrator
+          %li
+            %strong
+              Переводчик:
+            = @book.translator
+          %li
+            %strong
+              Издательство:
+            = @book.publishing_house
+          %li
+            %strong
+              Год написания книги:
+            = @book.creation_year
+    .span8
+      %article.blog-post
+        %p
+          = @book.info
+      - @book.reviews.each do |r|
+        %article.blog-post
+          .tooltip-demo.headline
+            %h4
+              = r.user.name + " " + r.user.lastname
+            %span.comment
+              3 comments
+          .row
+            .span2
+              = gravatar_for r.user
+            .span6
+              %p
+                = r.content
+      .comment-post
+        %h4
+          Оставить отзыв
+        .row
+          %span8
+          - if logged_in?
+            = form_for(:review, url: book_reviews_path(@book), class: "comment-form") do |f|
+              = label_tag :content, "Текст отзыва"
+              = f.text_area :content, class: "input-block-level", rows: "9"
+              = f.submit "Написать отзыв", class: "btn btn-medium btn-success"
+          - else
+            %p
+              Только зарегистрированные пользователи могут оставлять отзывы на книги
+
+  .row
+    .span12
+      = link_to "Все книги", books_path

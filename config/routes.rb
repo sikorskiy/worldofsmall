@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/show'
+
   root "books#home"
-  resources :books
+  resources :books do
+    resources :reviews, shallow: true
+  end
+
   resources :users
   get "/about", to: "books#about"
   get '/login', to: "sessions#new"

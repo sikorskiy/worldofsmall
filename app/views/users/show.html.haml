@@ -2,6 +2,7 @@
 - content_for :smalltext, "Дата создания профиля: #{@user.created_at.to_s}"
 .container
   %h1
+    = gravatar_for(@user)
     = @user.name + " " + @user.lastname
   %h4
     = @user.email
