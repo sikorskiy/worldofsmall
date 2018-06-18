@@ -36,8 +36,8 @@
             = @book.creation_year
     .span8
       %article.blog-post
-        %p
-          = @book.info
+      %p
+        = @book.info
       - @book.reviews.each do |r|
         %article.blog-post
           .tooltip-demo.headline
@@ -46,9 +46,9 @@
             %span.comment
               3 comments
           .row
-            .span2
+            .span1
               = gravatar_for r.user
-            .span6
+            .span7
               %p
                 = r.content
       .comment-post
@@ -56,14 +56,14 @@
           Оставить отзыв
         .row
           %span8
-          - if logged_in?
-            = form_for(:review, url: book_reviews_path(@book), class: "comment-form") do |f|
-              = label_tag :content, "Текст отзыва"
-              = f.text_area :content, class: "input-block-level", rows: "9"
-              = f.submit "Написать отзыв", class: "btn btn-medium btn-success"
-          - else
-            %p
-              Только зарегистрированные пользователи могут оставлять отзывы на книги
+            - if logged_in?
+              = form_for(:review, url: book_reviews_path(@book), class: "comment-form") do |f|
+                = label_tag :content, "Текст отзыва", style: "margin-left:10px;"
+                = f.text_area :content, class: "input-block-level", rows: "9"
+                = f.submit "Написать отзыв", class: "btn btn-medium btn-success", style: "margin-left:10px;"
+            - else
+              %p
+                Только зарегистрированные пользователи могут оставлять отзывы на книги
 
   .row
     .span12

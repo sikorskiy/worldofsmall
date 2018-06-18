@@ -6,16 +6,26 @@
         %div
           %nav
             %ul.nav.topnav
-              %li.success
+              %li.dropdown.success
                 = link_to "Главная страница", root_path
+                %ul.dropdown-menu
+                  %li
+                    One
+                  %li
+                    Two
               %li.primary
                 %a Wishlist
               %li.danger
                 = link_to "Все книги", books_path
               %li.warning.active
                 = link_to "Новая книга", new_book_path
-              %li.info
+              %li.info.dropdown
                 = link_to "О проекте", about_path
+                %ul.dropdown-menu
+                  %li
+                    Index alt 1
+                  %li
+                    Index alt 2
               %li.inverse
                 - if logged_in?
                   = link_to current_user.name, user_path(current_user)

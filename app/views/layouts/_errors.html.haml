@@ -1,0 +1,8 @@
+- if item.errors.any?
+  .alert.alert-warning.alert-dismissible
+    %a.close{href: "#", "data-dismiss": "alert"}
+      = "&times".html_safe
+    %ul
+      - item.errors.full_messages.each do |e|
+        %li
+          = e
