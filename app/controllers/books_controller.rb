@@ -8,10 +8,19 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
+    if logged_in?
+      @book = Book.find(params[:id])
+    else
+      flash[:warning] = "Только зарегистрированные пользователи могут редактировать книги"
+      redirect_to books_path
+    end
   end
 
   def update
+    if !logged_in?
+      flash[:warning] = "Только зарегистрированные пользователи могут редактировать книги"
+      redirect_to 'edit'
+    end
     @book = Book.find(params[:id])
     @book.update_attributes(book_params)
     if @book.errors.any?
