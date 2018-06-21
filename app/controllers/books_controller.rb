@@ -44,7 +44,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all.limit(8)
+    @books = Book.all
   end
 
   def home
