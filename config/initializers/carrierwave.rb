@@ -14,6 +14,7 @@ CarrierWave.configure do |config|
 
   if Rails.env.test? || Rails.env.development?
     config.enable_processing = false
+    config.storage = :file
     #config.root = "#{Rails.root}/tmp"
     #config.fog_directory    = 'worldofsmall-assets'
   else
