@@ -10,15 +10,17 @@ CarrierWave.configure do |config|
       :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
       :region                => 'us-east-2'
   }
-  config.storage = :fog
+
 
   if Rails.env.test? || Rails.env.development?
     config.enable_processing = false
-    config.root = "#{Rails.root}/tmp"
-    config.fog_directory    = 'worldofsmall-assets'
+    #config.root = "#{Rails.root}/tmp"
+    #config.fog_directory    = 'worldofsmall-assets'
   else
     config.fog_directory    = ENV['S3_BUCKET_NAME']
+    config.storage = :fog
+    config.cache_dir = "#{Rails.root}/tmp/uploads"
   end
 
-  config.cache_dir = "#{Rails.root}/tmp/uploads"
+
  end
