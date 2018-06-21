@@ -18,9 +18,9 @@ CarrierWave.configure do |config|
     #config.fog_directory    = 'worldofsmall-assets'
   else
     config.fog_directory    = ENV['S3_BUCKET_NAME']
-    config.storage = :fog
-    config.cache_dir = "#{Rails.root}/tmp/uploads"
+
   end
 
-
+  config.storage = :fog
+  config.cache_dir = "#{Rails.root}/tmp/uploads"
  end
