@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "books#home"
   resources :books do
-    resources :reviews, shallow: true
+    resources :reviews
   end
 
   resources :users

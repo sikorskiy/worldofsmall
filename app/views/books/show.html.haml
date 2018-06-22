@@ -43,35 +43,22 @@
               %label
                 Rating
 
-    .span8
+    .span7.offset1
       %article.blog-post
       %p
         = @book.info
-      - @book.reviews.each do |r|
-        %article.blog-post
-          .tooltip-demo.headline
-            %h4
-              = r.user.name + " " + r.user.lastname
-            %span.comment
-              3 comments
-          .row
-            .span1
-              = gravatar_for r.user
-            .span7
-              %p
-                = r.content
+      = render @book.reviews
       .comment-post
         %h4
           Оставить отзыв
         .row
-          %span8
+          %span7
             - if logged_in?
-              = form_for(:review, url: book_reviews_path(@book), class: "comment-form") do |f|
-                = label_tag :content, "Текст отзыва", style: "margin-left:10px;"
-                = f.text_area :content, class: "input-block-level", rows: "9"
-                = f.submit "Написать отзыв", class: "btn btn-medium btn-success", style: "margin-left:10px;"
+              = simple_form_for([@book, @book.reviews.build]) do |f|
+                = f.input :content, label: "Текст отзыва", input_html: {rows: "7", class: "input-block-level"}
+                = f.button :submit, "Написать отзыв", class: "btn btn-medium btn-success"
             - else
-              %p{style: "margin-left:10px;"}
+              %p
                 Только зарегистрированные пользователи могут оставлять отзывы на книги
 
   .row

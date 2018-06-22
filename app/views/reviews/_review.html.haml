@@ -1,0 +1,19 @@
+%article.blog-post
+  .tooltip-demo.headline
+    %h4
+      = review.user.name + " " + review.user.lastname
+    %span.comment
+      3 comments
+  .row
+    .span1
+      = gravatar_for review.user
+    .span7
+      %p
+        = review.content
+  .row
+    - if logged_in?
+      - if review.user_id == current_user.id
+        .quick-links.btn-group
+          = link_to "Редактировать", edit_book_review_path(review.book, review), class: "btn btn-custom"
+          = link_to "Удалить", book_review_path(review.book, review), method: :delete, data: { confirm: "Вы уверены, что хотите удалить отзыв?" }, class: "btn btn-custom"
+

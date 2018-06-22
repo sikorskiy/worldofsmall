@@ -5,7 +5,7 @@
     Author URL: https://bootstrapmade.com
 */
 /* ==== overwrite bootstrap standard ==== */
-@import url('overwrite.css');
+@import url('template/overwrite.css');
 @import url('boxtile.css');
 /* ====================================== */
 
