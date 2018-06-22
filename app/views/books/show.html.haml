@@ -36,38 +36,31 @@
             = @book.creation_year
           %li
             %strong
+              Средняя оценка:
+            %span.avg-review-rating{"data-score": "#{@average_rating}"}
+
+          %li
+            %strong
               %a.favourite-book-text
                 Добавить в список желаний
-          %li
-            #rating-form
-              %label
-                Rating
 
     .span7.offset1
       %article.blog-post
       %p
         = @book.info
       = render @book.reviews
-      .comment-post
-        %h4
-          Оставить отзыв
-        .row
-          %span7
-            - if logged_in?
-              = simple_form_for([@book, @book.reviews.build]) do |f|
-                = f.input :content, label: "Текст отзыва", input_html: {rows: "7", class: "input-block-level"}
-                = f.button :submit, "Написать отзыв", class: "btn btn-medium btn-success"
-            - else
-              %p
-                Только зарегистрированные пользователи могут оставлять отзывы на книги
+      = link_to "Новый отзыв", new_book_review_path(@book), class: "btn btn-lg btn-success"
 
   .row
     .span12
       = link_to "Все книги", books_path
 
 :javascript
-  $('#rating-form').raty({
-    pass: '/images/',
-    scoreName: 'review[rating]'
+  $('.avg-review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: ''
   });
 

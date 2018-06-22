@@ -41,6 +41,12 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    reviews = @book.reviews
+    if reviews.empty?
+      @average_rating = 0
+    else
+      @average_rating = reviews.average(:rating).round(2)
+    end
   end
 
   def index

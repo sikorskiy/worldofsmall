@@ -1,2 +1,20 @@
-%h1 Reviews#new
-%p Find me in app/views/reviews/new.html.haml
+.container
+  .comment-post
+    %h4
+      Оставить отзыв
+    .row
+      %span8
+        - if logged_in?
+          = simple_form_for([@book, @book.reviews.build]) do |f|
+            = f.input :content, label: "Текст отзыва", input_html: {rows: "9", class: "input-block-level"}
+            #rating-form
+              %label Общая оценка книги
+            = f.button :submit, "Написать отзыв", class: "btn btn-medium btn-success", style: "margin-top: 10px;"
+        - else
+          %p
+            Только зарегистрированные пользователи могут оставлять отзывы на книги
+:javascript
+  $('#rating-form').raty({
+    pass: '/images/',
+    scoreName: 'review[rating]'
+  });

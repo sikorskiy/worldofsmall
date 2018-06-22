@@ -30,21 +30,4 @@
               %a Next
     .row
       .portfolio-area.da-thumbs
-        - @books.each do |b|
-          %li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
-            .span3
-              .thumbnail
-                .image-wrapp
-                  - if b.image?
-                    = image_tag b.image.url
-                  -else
-                    = image_tag "Noimage.png"
-                .caption
-                  %h5
-                    %a
-                      = link_to b.name, book_path(b)
-                  %p
-                    - if b.info.nil?
-                      = b.author
-                    - else
-                      = b.info[0..60] + "..."
+        = render @books
