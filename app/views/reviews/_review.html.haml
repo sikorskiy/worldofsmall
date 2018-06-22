@@ -2,8 +2,7 @@
   .tooltip-demo.headline
     %h4
       = review.user.name + " " + review.user.lastname
-    %span.comment
-      3 comments
+    %span.comment.review-rating{"data-score": "#{review.rating}"}
   .row
     .span1
       = gravatar_for review.user
@@ -17,3 +16,11 @@
           = link_to "Редактировать", edit_book_review_path(review.book, review), class: "btn btn-custom"
           = link_to "Удалить", book_review_path(review.book, review), method: :delete, data: { confirm: "Вы уверены, что хотите удалить отзыв?" }, class: "btn btn-custom"
 
+:javascript
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: ''
+  });
