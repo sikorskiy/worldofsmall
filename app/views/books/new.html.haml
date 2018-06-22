@@ -3,32 +3,16 @@
 .container
   .row
     .span12
-      = form_for @book do |f|
-        .form-group
-          = label_tag :author, "Автор: "
-          = f.text_field :author, placeholder: "Автор книги", class: "form-control"
-        .form-group
-          = label_tag :name, "Название: "
-          = f.text_field :name, placeholder: "Название книги", class: "form-control"
-        .form-group
-          = label_tag :translator, "Переводчик: "
-          = f.text_field :translator, placeholder: "Переводчик", class: "form-control"
-        .form-group
-          = label_tag :illustrator, "Иллюстратор: "
-          = f.text_field :illustrator, placeholder: "Иллюстратор", class: "form-control"
-        .form-group
-          = label_tag :publishing_house, "Издательство: "
-          = f.text_field :publishing_house, placeholder: "Издательство", class: "form-control"
-        .form-group
-          = label_tag :creation_year, "Год написания: "
-          = f.text_field :creation_year, placeholder: "Год написания книги", class: "form-control"
-        .form-group
-          = label_tag :info, "Описание: "
-          = f.text_area :info, placeholder: "Описание книги", class: "form-control"
-        .form-group
-          = label_tag :image, "Изображение"
-          = f.file_field :image, class: "form-control"
-        - if f.object.image?
-          = image_tag f.object.image.thumb.url
-        = f.submit "Сохранить книгу", class: "btn btn-info"
+      = simple_form_for @book do |f|
+        = f.input :name, label: "Имя"
+        = f.input :author, label: "Автор"
+        = f.input :illustrator, label: "Иллюстратор"
+        = f.input :translator, label: "Переводчик"
+        = f.input :publishing_house, label: "Издательство"
+        = f.input :info, label: "Описание", input_html: {rows: "5"}
+        = f.input :image, as: :file
+        = f.button :submit, "Сохранить книгу", class: "button btn-success"
+
+
+
 
