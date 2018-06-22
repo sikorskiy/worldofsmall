@@ -36,9 +36,16 @@
             = @book.creation_year
           %li
             %strong
-              Средняя оценка:
-            %span.avg-review-rating{"data-score": "#{@average_rating}"}
-
+              Иллюстрации:
+            %span.avg-review-rating{"data-score": "#{@average_illustrator_rating}"}
+          %li
+            %strong
+              Содержание:
+            %span.avg-review-rating{"data-score": "#{@average_content_rating}"}
+          %li
+            %strong
+              Общее впечатление:
+            %span.avg-review-rating{"data-score": "#{@average_general_rating}"}
           %li
             %strong
               %a.favourite-book-text

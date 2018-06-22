@@ -6,12 +6,12 @@
     .span12
       = simple_form_for([@book, @review]) do |f|
         = f.input :content, label: "Текст отзыва", input_html: {rows: "7", class: "input-block-level"}
-        #rating-form
-          %label Общая оценка книги
+        #rating_form_illustrator
+          %label Иллюстрации
+        #rating_form_content
+          %label Содержание
+        #rating_form_general
+          %label Общее впечатление
         = f.button :submit, "Редактировать отзыв", class: "btn btn-medium btn-success", style: "margin-top: 10px;"
 
-:javascript
-  $('#rating-form').raty({
-    pass: '/images/',
-    scoreName: 'review[rating]'
-  });
+= render partial: "layouts/star_script"
