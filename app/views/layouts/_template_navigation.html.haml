@@ -1,31 +1,21 @@
 %header
   .navbar.navbar-fixed-top.navbar-expand-sm
     .navbar-inner
-      .container
+      .container-fluid
         = link_to image_tag("img/logo_middle.png"), root_path, class: "brand logo"
         %div
           %nav
             %ul.nav.topnav
-              %li.dropdown.success
+              %li.success
                 = link_to "Главная страница", root_path
-                %ul.dropdown-menu
-                  %li
-                    One
-                  %li
-                    Two
               %li.primary
                 %a Wishlist
               %li.danger
                 = link_to "Все книги", books_path
               %li.warning
                 = link_to "Новая книга", new_book_path
-              %li.info.dropdown
+              %li.info
                 = link_to "О проекте", about_path
-                %ul.dropdown-menu
-                  %li
-                    Index alt 1
-                  %li
-                    Index alt 2
               %li.inverse
                 - if logged_in?
                   = link_to current_user.name, user_path(current_user)
