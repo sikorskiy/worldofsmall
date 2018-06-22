@@ -2,9 +2,9 @@
 - content_for :smalltext, "Заполняйте все поля аккуратно"
 .container
   .row
-    .span12
-      = simple_form_for @book do |f|
-        = f.input :name, label: "Имя"
+    .span8
+      = simple_form_for @book, defaults: { input_html: {class: "input-block-level"}} do |f|
+        = f.input :name, label: "Название книги"
         = f.input :author, label: "Автор"
         = f.input :illustrator, label: "Иллюстратор"
         = f.input :translator, label: "Переводчик"
