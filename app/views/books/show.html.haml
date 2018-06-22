@@ -38,6 +38,10 @@
             %strong
               %a.favourite-book-text
                 Добавить в список желаний
+          %li
+            #rating-form
+              %label
+                Rating
 
     .span8
       %article.blog-post
@@ -73,3 +77,10 @@
   .row
     .span12
       = link_to "Все книги", books_path
+
+:javascript
+  $('#rating-form').raty({
+    pass: '/images/',
+    scoreName: 'review[rating]'
+  });
+
