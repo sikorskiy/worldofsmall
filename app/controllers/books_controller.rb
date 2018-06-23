@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :find_book, only: [:add_wishbook, :show]
+
   def new
     @book = Book.new
   end
@@ -40,7 +42,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
     reviews = @book.reviews
     if reviews.empty?
       @average_general_rating, @average_content_rating, @average_illustrator_rating = 0
@@ -63,4 +64,9 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:author, :name, :creation_year, :publishing_house, :illustrator, :info, :translator, :image)
   end
+
+  def find_book
+    @book = Book.find(params[:id])
+  end
+
 end

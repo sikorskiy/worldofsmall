@@ -1,6 +1,6 @@
 - content_for :bigtext, @book.name
 - content_for :smalltext, @book.author
-
+- params[:book_id] = @book.id
 .container
   .row
     .span4
@@ -48,9 +48,13 @@
             %span.avg-review-rating{"data-score": "#{@average_general_rating}"}
           %li
             %strong
-              %a.favourite-book-text
-                Добавить в список желаний
-
+              - if logged_in?
+                - if @book.wishbooks.find_by(user_id: current_user.id).nil?
+                  = link_to "Add to wishlist", book_wishbooks_path(@book), method: :post
+                - else
+                  = link_to "Remove from wishlist", book_wishbook_path(@book, @book.wishbooks.find_by(user_id: current_user.id)), method: :delete
+              - else
+                Войдите, чтобы добавить книгу в список желаний
     .span7.offset1
       %article.blog-post
       %p
