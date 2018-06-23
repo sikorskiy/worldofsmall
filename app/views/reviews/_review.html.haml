@@ -2,7 +2,7 @@
   .tooltip-demo.headline
     %h4
       = review.user.name + " " + review.user.lastname
-    %span.comment.review-rating{"data-score": "#{review.rating}"}
+    %span.comment.review-rating{"data-score": "#{average_rating(review)}"}
   .row
     .span1
       = gravatar_for review.user

@@ -1,0 +1,2 @@
+module WishbooksHelper
+end

@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to book_path(@review.book)
     else
+      flash.now[:warning] = @review.errors.full_messages
       render 'new'
     end
 
@@ -31,6 +32,7 @@ class ReviewsController < ApplicationController
     if @review.update_attributes(review_params)
       redirect_to book_path(@review.book)
     else
+      flash.now[:warning] = @review.errors.full_messages
       render 'edit'
     end
 
@@ -38,7 +40,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :general_rating, :illustrator_rating, :content_rating)
   end
 
   def find_book
