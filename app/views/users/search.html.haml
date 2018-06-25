@@ -1,0 +1,4 @@
+- content_for :bigtext, "Найти пользователя"
+- content_for :smalltext, "По имени и фамилии можно найти всех пользователей с открытым профилем"
+.container
+  = render partial: "search_form", locals: {item: @user}

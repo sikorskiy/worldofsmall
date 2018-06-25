@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+  def search
+    @user = User.new
+    @users = nil
+  end
+
+  def searchlist
+    @user = User.new(name: params[:user][:name], lastname: params[:user][:lastname])
+    @users = User.where(name: params[:user][:name]).or(User.where(lastname: params[:user][:lastname]))
+   # debugger
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -22,4 +33,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :lastname, :email, :password, :password_confirmation)
   end
+
 end

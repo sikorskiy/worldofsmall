@@ -1,16 +1,21 @@
 - content_for :bigtext, "Редактирование книги"
 - content_for :smalltext, "Все поля важны, заполняйте их максимально внимательно"
-
 .container
   .row
-    .span12
-      = simple_form_for @book do |f|
-        = f.input :name, label: "Имя"
-        = f.input :author, label: "Автор"
-        = f.input :illustrator, label: "Иллюстратор"
-        = f.input :translator, label: "Переводчик"
-        = f.input :publishing_house, label: "Издательство"
-        = f.input :info, label: "Описание", input_html: {rows: "5"}
-        = f.input :image, as: :file
-        = f.button :submit, "Редактировать книгу", class: "button btn-success"
+    - if logged_in?
+      .span8
+        = simple_form_for @book, defaults: { input_html: {class: "input-block-level"}} do |f|
+          = f.input :name, label: "Название книги"
+          = f.input :author, label: "Автор"
+          = f.input :illustrator, label: "Иллюстратор"
+          = f.input :translator, label: "Переводчик"
+          = f.input :publishing_house, label: "Издательство"
+          = f.input :info, label: "Описание", input_html: {rows: "5"}
+          = f.input :image, as: :file
+          = f.button :submit, "Редактировать книгу", class: "button btn-success"
+    - else
+      %p
+        Только зарегистрированные пользователи могут редактировать книги
+
+
 

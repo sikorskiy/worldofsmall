@@ -50,9 +50,11 @@
             %strong
               - if logged_in?
                 - if @book.wishbooks.find_by(user_id: current_user.id).nil?
-                  = link_to "Add to wishlist", book_wishbooks_path(@book), method: :post
+                  = link_to "Добавить в вишлист", book_wishbooks_path(@book), method: :post
+                  = image_tag "empty_heart.png", style: "height: 20px;"
                 - else
-                  = link_to "Remove from wishlist", book_wishbook_path(@book, @book.wishbooks.find_by(user_id: current_user.id)), method: :delete
+                  = link_to "Убрать из вишлиста", book_wishbook_path(@book, @book.wishbooks.find_by(user_id: current_user.id)), method: :delete
+                  = image_tag "filled_heart.png", style: "height: 20px;"
               - else
                 Войдите, чтобы добавить книгу в список желаний
     .span7.offset1

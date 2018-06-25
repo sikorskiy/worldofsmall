@@ -24,8 +24,10 @@ class BooksController < ApplicationController
       redirect_to 'edit'
     end
     @book = Book.find(params[:id])
+    @book.user = current_user
     @book.update_attributes(book_params)
     if @book.errors.any?
+      flash.now[:warning] = @book.errors.full_messages
       render "edit"
     else
       redirect_to book_path(@book)
@@ -33,8 +35,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(book_params)
+    @book = Book.new(book_params)
+    @book.user = current_user
+    @book.save
     if @book.errors.any?
+      flash.now[:warning] = @book.errors.full_messages
       render "new"
     else
       redirect_to book_path(@book)
