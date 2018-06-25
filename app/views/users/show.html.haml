@@ -8,3 +8,8 @@
     = @user.email
   %h5
     = link_to "Выйти из аккаунта", logout_path, method: :delete
+  .div{style: "text-align: center;"}
+    %h4.primary
+      %strong
+        Вишлист пользователя
+    = render @user.wishbooks

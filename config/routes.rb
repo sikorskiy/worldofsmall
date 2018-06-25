@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :users
 
   get "/about", to: "books#about"
+  get '/searchuser', to: "users#search"
+  post '/searchuser', to: "users#searchlist"
   get '/login', to: "sessions#new"
   get '/signup', to: "users#new"
   post '/login', to: "sessions#create"
