@@ -2,14 +2,8 @@
   .jumbotron.subhead#overview
     .container
       .row
-        .span8
+        .span12
           %h3
             = yield(:bigtext)
           %p
             = yield(:smalltext)
-        .span4
-          .input-append
-            %form.form-search
-              %input.input-medium.search-query{type: "text"}
-              %button.btn.btn-inverse{type: "submit"}
-                Пока не работает
