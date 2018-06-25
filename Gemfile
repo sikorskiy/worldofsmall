@@ -33,6 +33,7 @@ gem 'mini_magick', '~> 4.3'
 gem 'fog-aws'
 gem 'simple_form'
 
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
