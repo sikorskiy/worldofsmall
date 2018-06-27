@@ -60,7 +60,7 @@
     .span7.offset1
       %article.blog-post
       %p
-        = @book.info
+        = @book.info.html_safe
       = render @book.reviews
       = link_to "Новый отзыв", new_book_review_path(@book), class: "btn btn-lg btn-success"
 
