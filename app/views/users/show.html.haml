@@ -6,8 +6,9 @@
     = @user.name + " " + @user.lastname
   %h4
     = @user.email
-  %h5
-    = link_to "Выйти из аккаунта", logout_path, method: :delete
+  - if current_user == @user
+    %h5
+      = link_to "Выйти из аккаунта", logout_path, method: :delete
   .div{style: "text-align: center;"}
     %h4.primary
       %strong

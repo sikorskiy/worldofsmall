@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :wishbooks, dependent: :destroy
   has_many :books
+  has_one :role
 end
