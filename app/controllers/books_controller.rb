@@ -62,7 +62,7 @@ class BooksController < ApplicationController
   end
 
   def home
-    @books = Book.all
+    @books = Book.page params[:page]
   end
 
   private

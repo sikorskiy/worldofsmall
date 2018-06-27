@@ -1,13 +1,18 @@
 %header
-  .navbar.navbar-fixed-top.navbar-expand-sm
+  .navbar.navbar-fixed-top
     .navbar-inner
       .container-fluid
         = link_to image_tag("img/logo_middle.png"), root_path, class: "brand logo"
         %div
           %nav
             %ul.nav.topnav
-              %li.success
+              %li.dropdown.success
                 = link_to "Главная страница", root_path
+                %ul.dropdown-menu
+                  %li
+                    = link_to "Profile", user_path(current_user)
+                  %li
+                    = link_to "Profile", user_path(current_user)
               %li.primary
                 = link_to "Список желаний", searchuser_path
               %li.danger
