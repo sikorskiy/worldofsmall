@@ -1,4 +1,4 @@
 = simple_form_for item, url: searchuser_path, method: :post, wrapper: :inline_form, html: { class: 'form-inline' }, wrapper_mappings: {boolean: :inline_boolean} do |f|
-  = f.input :name, input_html: { class: "mr-sm-3" }
-  = f.input :lastname, input_html: { class: "mr-sm-3" }
-  = f.button :submit, "Найти пользователя", class: "btn btn-medium btn-success mr-sm-2"
+  = f.input :name, label: false, placeholder: "Имя пользователя", input_html: { class: "span4" }
+  = f.input :lastname, label: false, placeholder: "Фамилия пользователя", input_html: { class: "span4" }
+  = f.button :submit, "Найти", class: "btn btn-medium btn-success mr-sm-2"
