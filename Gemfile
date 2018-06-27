@@ -32,6 +32,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'fog-aws'
 gem 'simple_form'
+gem 'kaminari'
 
 
 # Use ActiveStorage variant
