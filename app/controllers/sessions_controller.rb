@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       log_in(user)
+      remember user
       flash[:success] = "Добро пожаловать, " + current_user.name
       redirect_to root_path
     else
