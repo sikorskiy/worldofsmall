@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_183913) do
+ActiveRecord::Schema.define(version: 2018_06_28_040903) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2018_06_27_183913) do
     t.text "info"
     t.string "image"
     t.integer "user_id"
+    t.float "start_age", default: 0.0
+    t.float "finish_age", default: 6.0
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -52,8 +54,6 @@ ActiveRecord::Schema.define(version: 2018_06_27_183913) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_private", default: false
-    t.float "start_age", default: 0.0
-    t.float "finish_age", default: 6.0
     t.integer "role_id", default: 1
   end
 
