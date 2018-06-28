@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_28_040903) do
+ActiveRecord::Schema.define(version: 2018_06_28_045031) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_06_28_040903) do
     t.datetime "updated_at", null: false
     t.boolean "is_private", default: false
     t.integer "role_id", default: 1
+    t.string "remember_digest"
   end
 
   create_table "wishbooks", force: :cascade do |t|
