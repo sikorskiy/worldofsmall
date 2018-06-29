@@ -609,7 +609,6 @@ ul.filter li.active a{
 	position:relative;
 	padding:0;
 	overflow:hidden;
-	border:nonw;
 }
 
 .portfolio-area .image-wrapp img,
@@ -671,7 +670,7 @@ ul.filter li.active a{
 	bottom:10px;
 }
 
-/* Portolio Hover */
+/* Portfolio Hover */
 
 .da-thumbs li ,
 .da-thumbs li  img {

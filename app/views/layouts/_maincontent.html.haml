@@ -23,8 +23,20 @@
         .pagination.pagination-right
           = paginate @books
     .row
-      .portfolio-area.da-thumbs
-        = render @books
+      .span3
+        %form{ :id => "filters_form_id", :action => "?", :method => "get" }
+        .form-group
+          %input.form-control-filters-input.form-control{:id => "filters_age_input_id", :name => "age", :placeholder => "Введите возраст", :min => "2", :max => "25", :type => "text" }
+        .form-group
+          %select.form-control-filters-input.form-control.js-country-select-multiple{ :name => "countries[]",  :multiple => "multiple" }
+        .form-group.js-region-select-multiple-block
+          %select.form-control.js-region-select-multiple{ :name => "regions[]",  :multiple => "multiple" }
+        .form-group
+          %select.form-control.js-category-select-multiple.form-control-filters-input{ :name => "categories[]",  :multiple => "multiple" }
+        %button.btn.btn-primary.main-lead-modal-submit-btn{ :id => "filters_form_submit_id", :type => "submit" } Применить фильтры
+      .span9
+        .portfolio-area.da-thumbs
+          = render @books
     .row-fluid
       .pagination.pagination-left
         = paginate @books
