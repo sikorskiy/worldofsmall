@@ -62,7 +62,7 @@ class BooksController < ApplicationController
   end
 
   def home
-    @books = Book.page params[:page]
+    @books = Book.where(["start_age < ? AND finish_age < ?", params[:finish], params[:start]]).page params[:page]
   end
 
   private
