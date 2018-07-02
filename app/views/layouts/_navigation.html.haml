@@ -1,0 +1,27 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+  = link_to image_tag("img/logo_middle.png"), root_path, class: "navbar-brand"
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item.info{class: "#{current_class?(root_path)}"}
+        = link_to "Главная страница", root_path, class: "nav-link"
+      %li.nav-item{class: "#{current_class?(searchuser_path)}"}
+        = link_to "Список желаний", searchuser_path, class: "nav-link"
+      %li.nav-item{class: "#{current_class?(books_path)}"}
+        = link_to "Все книги", books_path, class: "nav-link"
+      %li.nav-item{class: "#{current_class?(new_book_path)}"}
+        = link_to "Новая книга", new_book_path, class: "nav-link"
+      %li.nav-item{class: "#{current_class?(about_path)}"}
+        = link_to "О проекте", about_path, class: "nav-link"
+      %li.nav-item.dropdown
+        - if logged_in?
+          = link_to current_user.name, user_path(current_user), class: "#{current_class?(user_path(current_user))} nav-link dropdown-toggle", id: "navbarDropdown", "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            = link_to "Профиль", user_path(current_user), class: "dropdown-item"
+            .dropdown-divider
+            = link_to "Выход", logout_path, class: "dropdown-item"
+
+        - else
+          = link_to "Вход", login_path, method: :delete, class: "#{current_class?(login_path)} nav-link"
+

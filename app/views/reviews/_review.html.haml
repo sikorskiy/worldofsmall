@@ -1,20 +1,23 @@
-%article.blog-post
-  .tooltip-demo.headline
-    %h4
-      = review.user.name + " " + review.user.lastname
-    %span.comment.review-rating{"data-score": "#{average_rating(review)}"}
+.review-block
   .row
-    .span1
+    .col-sm-6
+      %strong
+        = link_to review.user.name + " " + review.user.lastname, user_path(review.user_id)
+    .col-sm-6
+      %span.comment.review-rating{"data-score": "#{average_rating(review)}"}
+  .row.review-content
+    .col-sm-2
       = gravatar_for review.user
-    .span7
+    .col-sm-10
       %p
         = review.content
   .row
-    - if logged_in?
-      - if review.user_id == current_user.id
-        .quick-links.btn-group
-          = link_to "Редактировать", edit_book_review_path(review.book, review), class: "btn btn-custom"
-          = link_to "Удалить", book_review_path(review.book, review), method: :delete, data: { confirm: "Вы уверены, что хотите удалить отзыв?" }, class: "btn btn-custom"
+    .col-sm-6
+      - if logged_in?
+        - if review.user_id == current_user.id
+          .btn-group-sm
+            = link_to "Редактировать", edit_book_review_path(review.book, review), class: "btn btn-link review-btn"
+            = link_to "Удалить", book_review_path(review.book, review), method: :delete, data: { confirm: "Вы уверены, что хотите удалить отзыв?" }, class: "btn btn-link review-btn"
 
 :javascript
   $('.review-rating').raty({

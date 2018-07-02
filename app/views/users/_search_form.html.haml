@@ -1,4 +1,4 @@
-= simple_form_for item, url: searchuser_path, method: :post, wrapper: :inline_form, html: { class: 'form-inline' }, wrapper_mappings: {boolean: :inline_boolean} do |f|
-  = f.input :name, label: false, placeholder: "Имя пользователя", input_html: { class: "span4" }
-  = f.input :lastname, label: false, placeholder: "Фамилия пользователя", input_html: { class: "span4" }
-  = f.button :submit, "Найти", class: "btn btn-medium btn-success mr-sm-2"
+= simple_form_for item, url: searchuser_path, method: :post, wrapper: :inline_form, html: {class: "form-inline"} do |f|
+  = f.input :name, label: false, placeholder: "Имя пользователя", input_html: { class: 'mr-sm-2 mb-2' }
+  = f.input :lastname, label: false, placeholder: "Фамилия пользователя", input_html: { class: 'mr-sm-2 mb-2', size: 30 }
+  = f.button :submit, "Найти", class: "btn btn-success mb-2"

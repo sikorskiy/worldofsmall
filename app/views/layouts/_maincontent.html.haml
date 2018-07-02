@@ -1,31 +1,26 @@
-%section#maincontent
-  .container-fluid
-    .row-fluid
-      .span12
-        .btn-group.filter-category
-          %a.btn.btn-success
-            Выберите возраст
-          %a.btn.btn-success.dropdown-toggle{"data-toggle": "dropdown"}
-            %span.caret
-          %ul.dropdown-menu.filter
-            %li.all.active
-              %a Все категории
-            %li
-              %a 0-1 года
-            %li
-              %a 1-2 года
-            %li
-              %a 2-3 года
-            %li
-              %a 3-4 года
-            %li
-              %a 4+ года
-        .pagination.pagination-right
-          = paginate @books
-    .row
-      .portfolio-area.da-thumbs
-        = render @books
-    .row-fluid
-      .pagination.pagination-left
-        = paginate @books
+.container-fluid
+  .row
+    .pagination.pagination-right
+      = paginate @books
+  .row
+    .col-md-3
+      %h5.text-center
+        Выбор книг по возрасту и рейтингу
+      = form_tag root_path, method: :get do
+        .form-group
+          = label_tag "Возраст"
+          = text_field_tag :age, params[:age], class: "form-control form-control-sm"
+          %small{class: "form-text text-muted"}
+            Возраст указывается в годах (например, 1 или 3.5)
+        .form-group
+          = label_tag "Рейтинг"
+          = text_field_tag :rating, params[:rating], class: "form-control form-control-sm"
+          %small{class: "form-text text-muted"}
+            Показываются все книжки с рейтингом выше указанного
+        = submit_tag "Найти книги", name: nil, class: "btn btn-primary btn-sm"
+    .col-md-9.gallery
+      = render @books
+  .row-fluid
+    .pagination.pagination-left
+      = paginate @books
 

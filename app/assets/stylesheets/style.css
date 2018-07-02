@@ -1,0 +1,150 @@
+body {
+    font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6em;
+}
+
+.nav li {
+
+}
+a {
+    color: #7cbb00;
+}
+
+/* Center website */
+.gallery {
+    max-width: 1000px;
+    margin: 8px -16px;
+}
+
+.gallery-column h6{
+    font-size: 50px;
+    word-break: break-all;
+}
+
+p .gallery-content {
+    word-break: break-all;
+}
+
+.header-block {
+    background-color: #78b500;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.btn-success-sm, .btn-success {
+    background-color: #78b500;
+    border-color: #78b500;
+}
+
+
+/* Add padding BETWEEN each column (if you want) */
+.gallery,
+.gallery > .gallery-column {
+    padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.gallery-column {
+    float: left;
+    width: 33%;
+}
+
+
+.btn-group-sm > .review-btn {
+    padding: 0.2rem 0.2rem;
+    font-size: 0.675rem;
+}
+
+/* Clear floats after rows */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.gallery-block {
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.gallery-block:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.gallery-content {
+    background-color: #F7F7F7;
+    font-family: Arial;
+    padding: 3px;
+    text-align: center;
+    font-size: 0.8em;
+    height: 100px;
+    overflow: scroll;
+}
+
+.header-content {
+    padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+.header-content h4, .header-content p {
+    margin: 0;
+    padding: 0;
+}
+
+.user-block {
+    text-align: center;
+}
+
+.user-block h4 {
+    color: white;
+    padding: 5px;
+}
+
+.book-image {
+    width: 100%;
+    height: auto;
+}
+
+.review-block h4 {
+    display: inline;
+}
+
+.review-block span {
+    float: right;
+}
+
+.review-block {
+    padding-bottom: 10px;
+}
+
+.review-button {
+    float: right;
+}
+.review-content {
+    padding: 5px 0px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+    .gallery-column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .gallery-column {
+        width: 100%;
+    }
+}

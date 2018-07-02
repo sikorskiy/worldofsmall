@@ -1,9 +1,7 @@
-%section#subintro
-  .jumbotron.subhead#overview
-    .container
-      .row
-        .span12
-          %h3
-            = yield(:bigtext)
-          %p
-            = yield(:smalltext)
+.header-block
+  .container
+    .header-content
+      %h4
+        = yield(:bigtext)
+      %p
+        = yield(:smalltext)

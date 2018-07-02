@@ -3,7 +3,7 @@
 .container
   .row
     - if logged_in?
-      .span8
+      .col-md-8
         = simple_form_for @book, defaults: { input_html: {class: "input-block-level"}} do |f|
           = f.input :name, label: "Название книги"
           = f.input :author, label: "Автор"
