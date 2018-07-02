@@ -3,17 +3,17 @@
 - params[:book_id] = @book.id
 .container
   .row
-    .span4
-      .aside
-        %h4.heading-success
-          = @book.name
+    .col-sm-4
+      .book-block
         - if @book.image?
-          = image_tag @book.image.url
+          = image_tag @book.image.url, class: "book-image"
         - else
-          = image_tag "Noimage.png"
-        %h5.heading-success
-          ="&nbsp;".html_safe
-        %ul.unstyled
+          = image_tag "Noimage.png", class: "book-image"
+        %ul.list-unstyled
+          %li
+            %strong
+              Название:
+            = @book.name
           %li
             %strong
               Автор:
@@ -57,12 +57,13 @@
                   = image_tag "filled_heart.png", style: "height: 20px;"
               - else
                 Войдите, чтобы добавить книгу в список желаний
-    .span7.offset1
-      %article.blog-post
+    .col-sm-8
       %p
         = @book.info.html_safe
       = render @book.reviews
-      = link_to "Новый отзыв", new_book_review_path(@book), class: "btn btn-lg btn-success"
+      .row
+        .col-sm-12
+          = link_to "Новый отзыв", new_book_review_path(@book), class: "btn btn-sm btn-success review-button"
 
   .row
     .span12

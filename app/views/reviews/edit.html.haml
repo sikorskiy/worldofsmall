@@ -3,7 +3,7 @@
 
 .container
   .row
-    .span12
+    .col-sm-12
       = simple_form_for([@book, @review]) do |f|
         = f.input :content, label: "Текст отзыва", input_html: {rows: "7", class: "input-block-level"}
         #rating_form_illustrator

@@ -3,7 +3,7 @@
     %h4
       Оставить отзыв
     .row
-      %span8
+      .col-sm-12
         - if logged_in?
           = simple_form_for([@book, @book.reviews.build]) do |f|
             = f.input :content, label: "Текст отзыва", input_html: {rows: "9", class: "input-block-level"}

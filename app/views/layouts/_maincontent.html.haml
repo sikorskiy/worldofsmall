@@ -1,43 +1,26 @@
-%section#maincontent
-  .container-fluid
-    .row-fluid
-      .span12
-        .btn-group.filter-category
-          %a.btn.btn-success
-            Выберите возраст
-          %a.btn.btn-success.dropdown-toggle{"data-toggle": "dropdown"}
-            %span.caret
-          %ul.dropdown-menu.filter
-            %li.all.active
-              %a Все категории
-            %li
-              %a 0-1 года
-            %li
-              %a 1-2 года
-            %li
-              %a 2-3 года
-            %li
-              %a 3-4 года
-            %li
-              %a 4+ года
-        .pagination.pagination-right
-          = paginate @books
-    .row
-      .span3
-        %form{ :id => "filters_form_id", :action => "?", :method => "get" }
+.container-fluid
+  .row
+    .pagination.pagination-right
+      = paginate @books
+  .row
+    .col-md-3
+      %h5.text-center
+        Выбор книг по возрасту и рейтингу
+      = form_tag root_path, method: :get do
         .form-group
-          %input.form-control-filters-input.form-control{:id => "filters_age_input_id", :name => "age", :placeholder => "Введите возраст", :min => "2", :max => "25", :type => "text" }
+          = label_tag "Возраст"
+          = text_field_tag :age, params[:age], class: "form-control form-control-sm"
+          %small{class: "form-text text-muted"}
+            Возраст указывается в годах (например, 1 или 3.5)
         .form-group
-          %select.form-control-filters-input.form-control.js-country-select-multiple{ :name => "countries[]",  :multiple => "multiple" }
-        .form-group.js-region-select-multiple-block
-          %select.form-control.js-region-select-multiple{ :name => "regions[]",  :multiple => "multiple" }
-        .form-group
-          %select.form-control.js-category-select-multiple.form-control-filters-input{ :name => "categories[]",  :multiple => "multiple" }
-        %button.btn.btn-primary.main-lead-modal-submit-btn{ :id => "filters_form_submit_id", :type => "submit" } Применить фильтры
-      .span9
-        .portfolio-area.da-thumbs
-          = render @books
-    .row-fluid
-      .pagination.pagination-left
-        = paginate @books
+          = label_tag "Рейтинг"
+          = text_field_tag :rating, params[:rating], class: "form-control form-control-sm"
+          %small{class: "form-text text-muted"}
+            Показываются все книжки с рейтингом выше указанного
+        = submit_tag "Найти книги", name: nil, class: "btn btn-primary btn-sm"
+    .col-md-9.gallery
+      = render @books
+  .row-fluid
+    .pagination.pagination-left
+      = paginate @books
 

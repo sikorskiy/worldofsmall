@@ -62,12 +62,16 @@ class BooksController < ApplicationController
   end
 
   def home
-    @books = Book.page params[:page]
+    @books = Book.search_book(params[:age]).page params[:page]
   end
 
   private
   def book_params
     params.require(:book).permit(:author, :name, :creation_year, :publishing_house, :illustrator, :info, :translator, :image)
+  end
+
+  def search_params
+    params.permit(:age, :rating)
   end
 
   def find_book

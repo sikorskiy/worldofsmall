@@ -1,17 +1,14 @@
-%li.portfolio-item2{"data-id": "id-0", "data-type": "web"}
-  .span4
-    .thumbnail
-      .image-wrapp
-        - if book.image?
-          = image_tag book.image.url
-        -else
-          = image_tag "Noimage.png"
-      .caption
-        %h6
-          %a
-            = link_to book.name, book_path(book)
-        %p
-          - if book.info.nil?
-            = book.author
-          - else
-            = book.info[0..60] + "..."
+.gallery-column
+  .gallery-block
+    - if book.image?
+      = image_tag book.image.url, style: "width: 100%;"
+    -else
+      = image_tag "Noimage.png"
+    .gallery-content
+      %h5
+        = link_to book.name, book_path(book)
+      %p
+        - if book.info.nil?
+          = book.author
+        - else
+          = book.info
