@@ -37,13 +37,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :resize_to_fit => [50, 50]
-  # end
+  version :thumb do
+    process :resize_to_fit => [50, 50]
+  end
 
   version :book_image_size do
     #process :crop
-    process :resize_to_limit => [800, 600]
+    process :resize_and_pad => [800, 600]
   end
 
   def crop
