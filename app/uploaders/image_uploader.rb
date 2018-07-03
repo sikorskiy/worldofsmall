@@ -41,8 +41,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [50, 50]
   end
 
-  version :large do
-    process :resize_to_limit => [800, 600]
+  version :book_image_size do
+    #process :crop
+    process :resize_and_pad => [800, 600]
   end
 
   def crop

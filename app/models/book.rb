@@ -7,7 +7,7 @@ class Book < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :wishbooks, dependent: :destroy
 
-  after_update :crop_book_image
+  #after_update :crop_book_image
 
   def crop_book_image
     image.recreate_versions! if crop_x.present?

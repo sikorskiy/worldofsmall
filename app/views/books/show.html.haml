@@ -6,7 +6,7 @@
     .col-sm-4
       .book-block
         - if @book.image?
-          = image_tag @book.image.url, class: "book-image"
+          = image_tag @book.image.url(:book_image_size), class: "book-image"
         - else
           = image_tag "Noimage.png", class: "book-image"
         %ul.list-unstyled

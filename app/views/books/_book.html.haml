@@ -1,7 +1,7 @@
 .gallery-column
   .gallery-block
     - if book.image?
-      = image_tag book.image.url, style: "width: 100%;"
+      = image_tag book.image.url(:book_image_size), style: "width: 100%;"
     -else
       = image_tag "Noimage.png"
     .gallery-content

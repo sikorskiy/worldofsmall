@@ -23,5 +23,5 @@
             = link_to "Выход", logout_path, method: :delete, class: "dropdown-item"
 
         - else
-          = link_to "Вход", login_path, method: :delete, class: "#{current_class?(login_path)} nav-link"
+          = link_to "Вход", login_path, class: "#{current_class?(login_path)} nav-link"
 

@@ -13,10 +13,8 @@ CarrierWave.configure do |config|
 
 
   if Rails.env.test? || Rails.env.development?
-    config.enable_processing = false
+    config.enable_processing = true
     config.storage = :file
-    #config.root = "#{Rails.root}/tmp"
-    #config.fog_directory    = 'worldofsmall-assets'
   else
     config.fog_directory    = ENV['S3_BUCKET_NAME']
     config.storage = :fog
