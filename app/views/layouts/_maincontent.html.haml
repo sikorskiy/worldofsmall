@@ -1,7 +1,8 @@
 .container-fluid
   .row
-    .pagination.pagination-right
-      = paginate @books
+    .col-sm-12
+      .pagination.flex-row-reverse
+        = paginate @books
   .row
     .col-md-3
       %h5.text-center
