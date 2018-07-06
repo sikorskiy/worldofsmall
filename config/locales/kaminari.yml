@@ -4,7 +4,7 @@ ru:
       first: "&laquo; Первая"
       last: "Последняя &raquo;"
       previous: "&lsaquo; Пред."
-      next: "Следующая &rsaquo;"
+      next: "След. &rsaquo;"
       truncate: "&hellip;"
   helpers:
     page_entries_info:

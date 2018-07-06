@@ -13,6 +13,9 @@
           = f.input :creation_year, label: "Год написания"
           = f.input :info, label: "Описание", input_html: {rows: "5"}
           = f.input :image, as: :file
+          - if current_user.is_admin?
+            = f.input :start_age, label: "С", placeholder: "С какого возраста можно начинать читать"
+            = f.input :finish_age, label: "По", placeholder: "До какого возраста стоит читать"
           = f.button :submit, "Редактировать книгу", class: "button btn-success"
     - else
       %p

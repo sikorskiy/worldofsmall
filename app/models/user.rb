@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :wishbooks, dependent: :destroy
   has_many :books
-  has_one :role
+  belongs_to :role
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -32,5 +32,9 @@ class User < ApplicationRecord
 
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def is_admin?
+    role.role_name == 'admin'
   end
 end
