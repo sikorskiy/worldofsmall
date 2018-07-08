@@ -34,18 +34,7 @@
             %strong
               Год написания книги:
             = @book.creation_year
-          %li
-            %strong
-              Иллюстрации:
-            %span.avg-review-rating{"data-score": "#{@average_illustrator_rating}"}
-          %li
-            %strong
-              Содержание:
-            %span.avg-review-rating{"data-score": "#{@average_content_rating}"}
-          %li
-            %strong
-              Общее впечатление:
-            %span.avg-review-rating{"data-score": "#{@average_general_rating}"}
+          = show_all_ratings(@book)
           %li
             %strong
               - if logged_in?

@@ -32,6 +32,7 @@ class BooksController < ApplicationController
     #elsif params[:book][:image].present?
     #  render 'crop'
     else
+      
       redirect_to book_path(@book)
     end
   end
@@ -51,14 +52,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    reviews = @book.reviews
-    if reviews.empty?
-      @average_general_rating, @average_content_rating, @average_illustrator_rating = 0
-    else
-      @average_general_rating = reviews.average(:general_rating).round(2)
-      @average_illustrator_rating = reviews.average(:illustrator_rating).round(2)
-      @average_content_rating = reviews.average(:content_rating).round(2)
-    end
+    @rating_types = get_rating_types
   end
 
   def index

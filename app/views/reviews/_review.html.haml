@@ -4,7 +4,7 @@
       %strong
         = link_to review.user.name + " " + review.user.lastname, user_path(review.user_id)
     .col-sm-6
-      %span.comment.review-rating{"data-score": "#{average_rating(review)}"}
+      %span.comment.review-rating{"data-score": "#{review.average_review_rating}"}
   .row.review-content
     .col-sm-2
       = gravatar_for review.user

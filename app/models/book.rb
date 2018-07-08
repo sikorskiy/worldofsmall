@@ -6,6 +6,7 @@ class Book < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :wishbooks, dependent: :destroy
+  has_many :ratings, through: :reviews
 
   #after_update :crop_book_image
 
@@ -21,8 +22,16 @@ class Book < ApplicationRecord
     end
 
   end
+  
+  def average_special_rating(id)
+    ratings.where(rating_type_id: id).average(:rating)
+  end
 
   def average_rating
-    reviews.average(:general_rating).round(2)
+    ratings.average(:rating)
+  end
+
+  def get_ratings
+    ratings.joins(:rating_type).select(:rating_type_id, :rating_type, :rating).group(:rating_type, :rating_type_id).average(:rating)
   end
 end
