@@ -14,13 +14,22 @@ class Book < ApplicationRecord
     image.recreate_versions! if crop_x.present?
   end
 
-  def self.search_book(age = 0) #should be better, to get hash and use all keys
-    if age.nil? || age == ''
-      all
-    else
-      where('start_age >= ?', age)
-    end
+  def update_rating
+    update_attribute(:rating, average_rating)
+  end
 
+  def self.search_book(age = 0, rating = 0) #should be better, to get hash and use all keys
+    query = all
+    query = query.where('start_age >= ?', age) unless age == '' || age.nil?
+    query = query.where('rating >= ?', rating) unless rating == '' || rating.nil?
+
+    #rate_query = joins(:ratings)
+    #query = joins(:rating).select("book_id, avg(rating) as average_rating)group(:book_id).average(:rating )
+    #if age > 0
+    #  query = all
+    #query = query.where('start_age >= ?', age) unless age == '' || age.nil? 
+    #query = query.where('book_rating >= ?', rating) unless rating != '' || rating.nil?
+    return query  
   end
   
   def average_special_rating(id)
@@ -28,7 +37,7 @@ class Book < ApplicationRecord
   end
 
   def average_rating
-    ratings.average(:rating)
+    ratings.where("rating > 0").average(:rating)
   end
 
   def get_ratings

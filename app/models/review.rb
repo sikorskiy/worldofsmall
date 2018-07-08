@@ -12,7 +12,7 @@ class Review < ApplicationRecord
   has_many :rating_types, through: :ratings
 
   def average_review_rating
-    ratings.average(:rating)
+    ratings.where("rating > 0").average(:rating)
   end
 
 end

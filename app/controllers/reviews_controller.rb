@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
         Rating.create(review_id: @review.id, rating: params[:review]["rating_type_#{r.id}".to_sym].to_f, rating_type_id: r.id)
         #byebug
       end
+      @book.update_rating
       redirect_to book_path(@review.book)
     else
       flash.now[:warning] = @review.errors.full_messages
@@ -34,6 +35,7 @@ class ReviewsController < ApplicationController
     end
 
     @review.destroy
+    @book.update_rating
     redirect_to book_path(@book)
   end
 
@@ -43,6 +45,7 @@ class ReviewsController < ApplicationController
         @rating = Rating.find_by(review_id: params[:id], rating_type_id: r.id)
         @rating.update_attribute(:rating, params[:review]["rating_type_#{r.id}".to_sym].to_f)
       end
+      @book.update_rating
       redirect_to book_path(@review.book)
     else
       flash.now[:warning] = @review.errors.full_messages
