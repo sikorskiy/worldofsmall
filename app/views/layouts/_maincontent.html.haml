@@ -10,12 +10,12 @@
       = form_tag root_path, method: :get do
         .form-group
           = label_tag "Возраст"
-          = text_field_tag :age, params[:age], class: "form-control form-control-sm"
+          = number_field_tag :age, params[:age], class: "form-control form-control-sm"
           %small{class: "form-text text-muted"}
             Возраст указывается в годах (например, 1 или 3.5)
         .form-group
           = label_tag "Рейтинг"
-          = text_field_tag :rating, params[:rating], class: "form-control form-control-sm"
+          = number_field_tag :rating, params[:rating], class: "form-control form-control-sm"
           %small{class: "form-text text-muted"}
             Показываются все книжки с рейтингом выше указанного
         = submit_tag "Найти книги", name: nil, class: "btn btn-primary btn-sm"

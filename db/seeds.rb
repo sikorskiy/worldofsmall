@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+RatingType.create(rating_type: "Иллюстрации", description: "Качество, релевантность, оригинальность иллюстраций в книге")
+RatingType.create(rating_type: "Содержание", description: "Качество, релевантность, оригинальность, полезность текста в книге")
+RatingType.create(rating_type: "Общее впечатление", description: "Общее впечатление от книги, на основании реакции ребенка и собственных суждений")

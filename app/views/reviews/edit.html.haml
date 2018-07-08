@@ -6,12 +6,7 @@
     .col-sm-12
       = simple_form_for([@book, @review]) do |f|
         = f.input :content, label: "Текст отзыва", input_html: {rows: "7", class: "input-block-level"}
-        #rating_form_illustrator
-          %label Иллюстрации
-        #rating_form_content
-          %label Содержание
-        #rating_form_general
-          %label Общее впечатление
+        = get_all_ratings
         = f.button :submit, "Редактировать отзыв", class: "btn btn-medium btn-success", style: "margin-top: 10px;"
 
 = render partial: "layouts/star_script"

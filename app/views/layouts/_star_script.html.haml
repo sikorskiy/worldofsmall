@@ -1,14 +1,4 @@
+- rating_script = "<script>"
+- get_rating_types.each {|r| rating_script += "$('#rating_form_#{r.id}').raty({scoreName: 'review[rating_type_#{r.id}]'});"}
+= (rating_script + "</script>").html_safe
 
-:javascript
-  $('#rating_form_illustrator').raty({
-    pass: '/images/',
-    scoreName: 'review[illustrator_rating]'
-  });
-  $('#rating_form_content').raty({
-    pass: '/images/',
-    scoreName: 'review[content_rating]'
-  });
-  $('#rating_form_general').raty({
-    pass: '/images/',
-    scoreName: 'review[general_rating]'
-  });
