@@ -26,8 +26,8 @@ class Book < ApplicationRecord
 
   def self.search_book(age = 0, rating = 0) #should be better, to get hash and use all keys
     query = all
-    query = query.where('start_age >= ?', age) unless age == '' || age.nil?
-    query = query.where('rating >= ?', rating) unless rating == '' || rating.nil?
+    query = query.where('start_age <= ?', age) unless age == '' || age.nil?
+    query = query.where('rating >= ? AND rating > 0', rating) unless rating == '' || rating.nil?
 
     #rate_query = joins(:ratings)
     #query = joins(:rating).select("book_id, avg(rating) as average_rating)group(:book_id).average(:rating )
