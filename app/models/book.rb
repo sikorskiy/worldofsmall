@@ -8,6 +8,12 @@ class Book < ApplicationRecord
   has_many :wishbooks, dependent: :destroy
   has_many :ratings, through: :reviews
 
+  before_save :default_value
+  
+  def default_value
+    rating = 0
+  end 
+
   #after_update :crop_book_image
 
   def crop_book_image
