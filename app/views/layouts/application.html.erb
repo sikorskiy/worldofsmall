@@ -3,7 +3,7 @@
   <head>
     <%= render "layouts/counters" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worldofsmall</title>
+    <title> <%= full_title(yield(:title)) %> </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,11 +16,13 @@
   <%= render "layouts/navigation" %>
   <%= render "layouts/header" %>
 
+  <% if !flash.empty? %>
   <div class="container">
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
   </div>
+  <% end %>
 
   <%= yield %>
 

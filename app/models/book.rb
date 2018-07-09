@@ -9,6 +9,7 @@ class Book < ApplicationRecord
   has_many :ratings, through: :reviews
 
   before_save :default_value
+  default_scope -> { order(rating: :desc) }
   
   def default_value
     rating = 0

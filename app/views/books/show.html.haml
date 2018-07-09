@@ -1,3 +1,4 @@
+- provide :title, "#{@book.name}. #{@book.author}"
 - content_for :bigtext, "Рейтинг книги" + " \"#{@book.name}\", " + @book.author
 - content_for :smalltext, "Отзывы про \"#{@book.name}\": качество иллюстраций, содержания и общее впечатление"
 - params[:book_id] = @book.id
@@ -33,7 +34,7 @@
           %li
             %strong
               Год написания книги:
-            = @book.creation_year
+            = @book.creation_year  
           = show_all_ratings(@book)
           %li
             %strong
@@ -46,6 +47,10 @@
                   = image_tag "filled_heart.png", style: "height: 20px;"
               - else
                 Войдите, чтобы добавить книгу в список желаний
+        %span.badge.badge-warning{style: "position: absolute; top: 30px; left: 20px;"}
+          = @book.rating.nil? ? "Нет рейтинга" : "Рейтинг: " + @book.rating.round(1).to_s
+        %span.badge.badge-warning{style: "position: absolute; top: 30px; right: 20px;"}
+          = "От " + @book.start_age.round(0).to_s + " до " + @book.finish_age.round(0).to_s
     .col-sm-8
       %p
         = @book.info.html_safe
