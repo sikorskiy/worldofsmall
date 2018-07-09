@@ -23,6 +23,7 @@ a {
     word-break: break-all;
 }
 
+
 p .gallery-content {
     word-break: break-all;
 }
@@ -54,6 +55,7 @@ p .gallery-content {
 .gallery-column {
     float: left;
     width: 33%;
+    padding-left: 5px;
 }
 
 
