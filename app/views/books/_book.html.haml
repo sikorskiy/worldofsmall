@@ -14,3 +14,5 @@
           = book.info
     %span.badge.badge-warning{style: "position: absolute; top: 8px; left: 8px;"}
       = book.rating.nil? ? "Нет рейтинга" : book.rating.round(1) 
+    %span.badge.badge-warning{style: "position: absolute; top: 8px; right: 8px;"}
+      = "От " + book.start_age.round(0).to_s + " до " + book.finish_age.round(0).to_s  
