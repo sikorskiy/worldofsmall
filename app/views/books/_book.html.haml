@@ -12,3 +12,5 @@
           = book.author
         - else
           = book.info
+    %span.badge.badge-warning{style: "position: absolute; top: 8px; left: 8px;"}
+      = book.rating.nil? ? "Нет рейтинга" : book.rating.round(1) 
