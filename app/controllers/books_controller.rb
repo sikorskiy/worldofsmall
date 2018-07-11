@@ -63,6 +63,10 @@ class BooksController < ApplicationController
     @books = Book.search_book(params[:age], params[:rating]).page params[:page]
   end
 
+  def google_verification
+    redirect_to "google963acee8adc56ebe.html"
+  end
+
   private
   def book_params
     params.require(:book).permit(:author, :name, :creation_year, :publishing_house, :illustrator, :info, :translator, :image, :start_age, :finish_age)
