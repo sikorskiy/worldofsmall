@@ -34,6 +34,7 @@ gem 'fog-aws'
 gem 'simple_form'
 gem 'kaminari'
 gem 'select2-rails'
+gem 'sitemap_generator'
 
 
 # Use ActiveStorage variant
