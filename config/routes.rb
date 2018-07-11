@@ -16,7 +16,5 @@ Rails.application.routes.draw do
   get '/signup', to: "users#new"
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
-
-  get '/google963acee8adc56ebe.html', to: "books#google_verification"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
