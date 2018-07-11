@@ -8,10 +8,10 @@ class Book < ApplicationRecord
   has_many :wishbooks, dependent: :destroy
   has_many :ratings, through: :reviews
 
-  before_save :default_value
+  before_save :default_values
   default_scope -> { order(rating: :desc) }
   
-  def default_value
+  def default_values
     rating = 0
   end 
 
