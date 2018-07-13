@@ -9,7 +9,7 @@ class Book < ApplicationRecord
   has_many :ratings, through: :reviews
 
   before_save :default_values
-  default_scope -> { order(rating: :desc) }
+  default_scope -> { order("rating DESC NULLS LAST") }
   
   def default_values
     rating = 0
@@ -29,7 +29,7 @@ class Book < ApplicationRecord
     query = all
     query = query.where('start_age <= ?', age) unless age.blank?
     query = query.where('rating >= ? AND rating > 0', rating) unless rating.blank?
-    return query.order("rating DESC NULLS LAST")
+    return query
   end
   
   def average_special_rating(id)
