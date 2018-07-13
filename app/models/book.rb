@@ -29,7 +29,7 @@ class Book < ApplicationRecord
     query = all
     query = query.where('start_age <= ?', age) unless age.blank?
     query = query.where('rating >= ? AND rating > 0', rating) unless rating.blank?
-    return query.order(:rating)
+    return query.order("rating DESC NULLS LAST")
   end
   
   def average_special_rating(id)
