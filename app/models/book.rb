@@ -29,14 +29,7 @@ class Book < ApplicationRecord
     query = all
     query = query.where('start_age <= ?', age) unless age.blank?
     query = query.where('rating >= ? AND rating > 0', rating) unless rating.blank?
-
-    #rate_query = joins(:ratings)
-    #query = joins(:rating).select("book_id, avg(rating) as average_rating)group(:book_id).average(:rating )
-    #if age > 0
-    #  query = all
-    #query = query.where('start_age >= ?', age) unless age == '' || age.nil? 
-    #query = query.where('book_rating >= ?', rating) unless rating != '' || rating.nil?
-    return query  
+    return query.order(:rating)
   end
   
   def average_special_rating(id)
