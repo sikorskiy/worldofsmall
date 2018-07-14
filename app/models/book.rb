@@ -8,7 +8,7 @@ class Book < ApplicationRecord
   has_many :wishbooks, dependent: :destroy
   has_many :ratings, through: :reviews
 
-  has_many :authorships
+  has_many :authorships, dependent: :delete_all
   has_many :authors, through: :authorships
 
   before_save :default_values

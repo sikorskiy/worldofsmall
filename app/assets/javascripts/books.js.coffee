@@ -24,3 +24,4 @@ class BookImageCropper
       height: Math.round(150/coords.h * $('#cropbox').height()) + 'px'
       marginLeft: '-' + Math.round(200/coords.w * coords.x) + 'px'
       marginTop: '-' + Math.round(150/coords.h * coords.y) + 'px'
+

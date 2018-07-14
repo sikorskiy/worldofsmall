@@ -29,8 +29,6 @@ class BooksController < ApplicationController
     if @book.errors.any?
       flash.now[:warning] = @book.errors.full_messages
       render "edit"
-    #elsif params[:book][:image].present?
-    #  render 'crop'
     else
       
       redirect_to book_path(@book)

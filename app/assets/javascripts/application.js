@@ -16,4 +16,6 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery.Jcrop
+//= require select2
+//= require select
 //= require_tree .
