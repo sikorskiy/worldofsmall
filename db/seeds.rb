@@ -7,14 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Country.create(name: "США")
-Country.create(name: "СССР")
-Country.create(name: "Германия")
-Country.create(name: "Англия")
-Country.create(name: "Франция")
+Country.create(name: "Нидерланды")
 
-
-Author.create(name: "Эрик Карл", date_of_birth: Date.parse("Jun 25 1929"), country: Country.find_by_name("США"))
-Author.create(name: "Ротраут Сюзанне Бернер", date_of_birth: Date.parse("Jun 26 1948"), country: Country.find_by_name("Германия"))
-Author.create(name: "Джулия Дональдсон", date_of_birth: Date.parse("Sep 16 1948"), country: Country.find_by_name("Англия"))
-Author.create(name: "Эрве Тюлле", date_of_birth: Date.parse("Jun 28 1958"), country: Country.find_by_name("Франция"))
-Author.create(name: "Ричард Скарри", date_of_birth: Date.parse("Jun 5 1919"), country: Country.find_by_name("США"), date_of_death: Date.parse("Apr 30 1994"))
+Author.create(name: "Дэвид Макки", date_of_birth: Date.parse("Jan 02 1935"), country: Country.find_by_name("Англия"))
+Author.create(name: "Роберт Макклоски", date_of_birth: Date.parse("Sep 15 1914"), date_of_death: Date.parse("Jun 30 2003"), country: Country.find_by_name("США"))
+Author.create(name: "Макс Велтхейс", date_of_birth: Date.parse("May 22 1923"), date_of_death: Date.parse("Jan 25 2005"), country: Country.find_by_name("Нидерланды"))
+Author.create(name: "Майкл Розен", date_of_birth: Date.parse("May 07 1946"), country: Country.find_by_name("Англия"))
+Author.create(name: "Шел Силверстайн", date_of_birth: Date.parse("Sep 25 1930"), date_of_death: Date.parse("May 10 1999"), country: Country.find_by_name("США"))
+Author.create(name: "Арнольд Лобел", date_of_birth: Date.parse("May 22 1933"), date_of_death: Date.parse("Dec 4 1987"), country: Country.find_by_name("США"))
+Author.create(name: "Маргарет Уайз Браун", date_of_birth: Date.parse("May 23 1910"), date_of_death: Date.parse("Nov 13 1952"), country: Country.find_by_name("США"))

@@ -12,7 +12,7 @@ class Book < ApplicationRecord
   has_many :authors, through: :authorships
 
   before_save :default_values
-  #default_scope -> { order("rating DESC NULLS LAST") } #postgres sorts with NULLS first by default
+  default_scope -> { order("rating DESC NULLS LAST") } #postgres sorts with NULLS first by default
   
   def default_values
     rating = 0
