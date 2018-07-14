@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-RatingType.create(rating_type: "Иллюстрации", description: "Качество, релевантность, оригинальность иллюстраций в книге")
-RatingType.create(rating_type: "Содержание", description: "Качество, релевантность, оригинальность, полезность текста в книге")
-RatingType.create(rating_type: "Общее впечатление", description: "Общее впечатление от книги, на основании реакции ребенка и собственных суждений")
+Country.create(name: "США")
+Country.create(name: "СССР")
+Country.create(name: "Германия")
+Country.create(name: "Англия")
+Country.create(name: "Франция")
+
+
+Author.create(name: "Эрик Карл", date_of_birth: Date.parse("Jun 25 1929"), country: Country.find_by_name("США"))
+Author.create(name: "Ротраут Сюзанне Бернер", date_of_birth: Date.parse("Jun 26 1948"), country: Country.find_by_name("Германия"))
+Author.create(name: "Джулия Дональдсон", date_of_birth: Date.parse("Sep 16 1948"), country: Country.find_by_name("Англия"))
+Author.create(name: "Эрве Тюлле", date_of_birth: Date.parse("Jun 28 1958"), country: Country.find_by_name("Франция"))
+Author.create(name: "Ричард Скарри", date_of_birth: Date.parse("Jun 5 1919"), country: Country.find_by_name("США"), date_of_death: Date.parse("Apr 30 1994"))

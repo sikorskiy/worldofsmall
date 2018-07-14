@@ -29,8 +29,6 @@ class BooksController < ApplicationController
     if @book.errors.any?
       flash.now[:warning] = @book.errors.full_messages
       render "edit"
-    #elsif params[:book][:image].present?
-    #  render 'crop'
     else
       
       redirect_to book_path(@book)
@@ -65,7 +63,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:author, :name, :creation_year, :publishing_house, :illustrator, :info, :translator, :image, :start_age, :finish_age)
+    params.require(:book).permit({author_ids: []}, :name, :creation_year, :publishing_house, :illustrator, :info, :translator, :image, :start_age, :finish_age)
   end
 
   def search_params

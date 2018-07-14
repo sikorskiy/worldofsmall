@@ -11,6 +11,13 @@ class User < ApplicationRecord
   has_many :books
   belongs_to :role
 
+  before_save :default_values
+
+  def default_values
+    if role_id.nil?
+      role = Role.find_by_role_name("user")
+    end
+  end
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)

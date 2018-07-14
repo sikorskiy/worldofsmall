@@ -9,7 +9,7 @@
         = link_to book.name, book_path(book)
       %p
         - if book.info.nil?
-          = book.author
+          = bookauthor_name
         - else
           = book.info
     %span.badge.badge-warning{style: "position: absolute; top: 8px; left: 8px;"}

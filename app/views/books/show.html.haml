@@ -1,5 +1,5 @@
-- provide :title, "#{@book.name}. #{@book.author}"
-- content_for :bigtext, "Рейтинг книги" + " \"#{@book.name}\", " + @book.author
+- provide :title, "#{@book.name}. #{@bookauthor_name}"
+- content_for :bigtext, "Рейтинг книги" + " \"#{@book.name}\", " + @book.authors.collect(&:name).join(', ')
 - content_for :smalltext, "Отзывы про \"#{@book.name}\": качество иллюстраций, содержания и общее впечатление"
 - params[:book_id] = @book.id
 .container
@@ -18,7 +18,7 @@
           %li
             %strong
               Автор:
-            = @book.author
+            = @book.author_name
           %li
             %strong
               Иллюстратор:
