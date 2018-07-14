@@ -1,0 +1,34 @@
+= form_for @book do |f|
+  .form-group
+    %label Название
+    = f.text_field :name, class: "form-control"
+  .form-group
+    %label Автор
+    = f.collection_select :author_ids, Author.order(:name), :id, :name, {}, {class: "form-control", multiple: true}
+  .form-group
+    %label Иллюстратор
+    = f.text_field :illustrator, class: "form-control"
+  .form-group
+    %label Переводчик
+    = f.text_field :translator, class: "form-control"
+  .form-group
+    %label Издательство
+    = f.text_field :publishing_house, class: "form-control"
+  .form-group
+    %label Год написания
+    = f.text_field :creation_year, class: "form-control"
+  .form-group
+    %label Описание
+    = f.text_area :info, class: "form-control", rows: "5"
+  - if current_user.is_admin?
+    .form-group
+      %label С
+      = f.text_field :start_age, class: "form-control", placeholder: "С какого возраста можно начинать читать"
+    .form-group
+      %label До
+      = f.text_field :finish_age, class: "form-control", placeholder: "До какого возраста стоит читать"
+  .form-group
+    = f.file_field :image
+
+
+  = f.submit button_name + " книгу", class: "btn button btn-success"

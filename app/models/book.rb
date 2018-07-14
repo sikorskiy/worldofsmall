@@ -1,18 +1,24 @@
 class Book < ApplicationRecord
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
-  validates :name, :author, :info, presence: true
+  validates :name, :info, presence: true
   mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :wishbooks, dependent: :destroy
   has_many :ratings, through: :reviews
 
+  has_many :authorships
+  has_many :authors, through: :authorships
+
   before_save :default_values
-  default_scope -> { order("rating DESC NULLS LAST") }
+  #default_scope -> { order("rating DESC NULLS LAST") } #postgres sorts with NULLS first by default
   
   def default_values
     rating = 0
+    if user_id.nil?
+      user_id = User.find(1)
+    end
   end 
 
   #after_update :crop_book_image

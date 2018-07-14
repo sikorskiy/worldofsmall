@@ -10,25 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_121634) do
+ActiveRecord::Schema.define(version: 2018_07_14_131720) do
 
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string "namespace"
-    t.text "body"
-    t.string "resource_type"
-    t.integer "resource_id"
-    t.string "author_type"
-    t.integer "author_id"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "authorships", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_authorships_on_author_id"
+    t.index ["book_id"], name: "index_authorships_on_book_id"
   end
 
   create_table "books", force: :cascade do |t|
     t.string "name"
-    t.string "author"
     t.string "translator"
     t.string "illustrator"
     t.integer "creation_year"
@@ -41,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_07_08_121634) do
     t.float "start_age", default: 0.0
     t.float "finish_age", default: 6.0
     t.float "rating"
+    t.string "author_name"
   end
 
   create_table "rating_types", force: :cascade do |t|
