@@ -31,8 +31,9 @@ class Book < ApplicationRecord
     update_attribute(:rating, average_rating)
   end
 
-  def self.search_book(age = 0, rating = 0) #should be better, to get hash and use all keys
+  def self.search_book(age = 0, rating = 0, author_ids = nil) #should be better, to get hash and use all keys
     query = all
+    query = query.joins(:authors).where(authors: {id: author_ids}) unless author_ids.blank?
     query = query.where('start_age <= ?', age) unless age.blank?
     query = query.where('rating >= ? AND rating > 0', rating) unless rating.blank?
     return query
