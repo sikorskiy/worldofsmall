@@ -18,7 +18,7 @@
           %li
             %strong
               Автор:
-            = @book.author_name
+            = @book.authors.collect(&:name).join(', ')
           %li
             %strong
               Иллюстратор:
