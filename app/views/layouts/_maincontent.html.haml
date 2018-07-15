@@ -18,6 +18,11 @@
           = number_field_tag :rating, params[:rating], class: "form-control form-control-sm"
           %small{class: "form-text text-muted"}
             Показываются все книжки с рейтингом выше указанного
+        .form-group
+          = label_tag "Автор"
+          = select_tag :author_ids, options_from_collection_for_select(Author.all.order("name DESC"), :id, :name, params[:author_ids]), multiple: true, class: "form-control form-control-sm js-select"
+          %small{class: "form-text text-muted"}
+            Можно выбрать любого из существющих авторов
         = submit_tag "Найти книги", name: nil, class: "btn btn-primary btn-sm"
     .col-md-9.gallery
       = render @books

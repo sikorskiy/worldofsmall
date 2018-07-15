@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require select
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require jquery.Jcrop
 //= require select2
-//= require select
 //= require_tree .

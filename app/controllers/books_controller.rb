@@ -58,7 +58,7 @@ class BooksController < ApplicationController
   end
 
   def home
-    @books = Book.search_book(params[:age], params[:rating]).page params[:page]
+    @books = Book.search_book(params[:age], params[:rating], params[:author_ids]).page params[:page]
   end
 
   private
