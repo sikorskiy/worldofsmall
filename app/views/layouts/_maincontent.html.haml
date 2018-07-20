@@ -7,20 +7,20 @@
     .col-md-3
       %h5.text-center
         Выбор книг по возрасту и рейтингу
-      = form_tag root_path, method: :get do
+      = form_tag root_path, method: :get, id: "filter_form" do
         .form-group
-          = label_tag "Возраст"
-          = number_field_tag :age, params[:age], class: "form-control form-control-sm"
-          %small{class: "form-text text-muted"}
+          = label_tag :age, "Возраст"
+          = text_field_tag :age, params[:age], class: "form-control form-control-sm", id: "age_filter"
+          %small{class: "form-text text-muted", id: 'age_text'}
             Возраст указывается в годах (например, 1 или 3.5)
         .form-group
-          = label_tag "Рейтинг"
-          = number_field_tag :rating, params[:rating], class: "form-control form-control-sm"
-          %small{class: "form-text text-muted"}
+          = label_tag :rating, "Рейтинг"
+          = text_field_tag :rating, params[:rating], name: nil, class: "form-control form-control-sm",  id: "rating_filter"
+          %small{class: "form-text text-muted", id: 'rating_text'}
             Показываются все книжки с рейтингом выше указанного
         .form-group
-          = label_tag "Автор"
-          = select_tag :author_ids, options_from_collection_for_select(Author.all.order("name DESC"), :id, :name, params[:author_ids]), multiple: true, class: "form-control form-control-sm js-select"
+          = label_tag :author_ids, "Автор"
+          = select_tag :author_ids, options_from_collection_for_select(Author.all.order(:name), :id, :name, params[:author_ids]), multiple: true, class: "form-control form-control-sm js-select"
           %small{class: "form-text text-muted"}
             Можно выбрать любого из существющих авторов
         = submit_tag "Найти книги", name: nil, class: "btn btn-primary btn-sm"

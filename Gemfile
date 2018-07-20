@@ -36,6 +36,8 @@ gem 'kaminari'
 gem 'select2-rails'
 gem 'sitemap_generator'
 gem 'pg'
+gem 'jquery-validation-rails'
+
 
 
 # Use ActiveStorage variant
@@ -51,6 +53,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'hirb'
 end
 
 group :development do

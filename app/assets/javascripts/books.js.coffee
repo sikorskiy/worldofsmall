@@ -7,7 +7,7 @@ class BookImageCropper
       aspectRatio: 4/3
       setSelect: [0,0,800,600]
       minSize: [800,600]
-      bgColor: white
+      bgColor: 'white'
       onSelect: @update
       onChange: @update
 
