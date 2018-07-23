@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   get 'wishbooks/new'
   root "books#home"
   resources :books do

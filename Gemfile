@@ -37,6 +37,7 @@ gem 'select2-rails'
 gem 'sitemap_generator'
 gem 'pg'
 gem 'jquery-validation-rails'
+gem 'activeadmin'
 
 
 

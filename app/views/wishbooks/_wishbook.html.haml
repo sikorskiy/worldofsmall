@@ -1,2 +1,2 @@
 %p
-  = link_to "\"#{wishbook.book.name}\". #{wishbook.book.author}", book_path(wishbook.book)
+  = link_to "\"#{wishbook.book.name}\". #{wishbook.book.authors.collect(&:name).join(', ')}", book_path(wishbook.book)
