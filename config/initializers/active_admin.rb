@@ -1,4 +1,6 @@
 ActiveAdmin.setup do |config|
+  config.before_action :set_admin_locale
+  
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -290,4 +292,8 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
+
+  def set_admin_locale
+    I18n.locale = :en
+  end
 end
