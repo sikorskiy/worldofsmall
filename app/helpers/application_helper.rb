@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def full_title(page_title = '')
-    base_title = "Основательный подход к детским книгам"
+    base_title = "Внимательный подход к детским книгам"
     if page_title.empty?
       "WorldOfSmall | " + base_title
     else

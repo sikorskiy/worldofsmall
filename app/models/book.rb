@@ -11,6 +11,9 @@ class Book < ApplicationRecord
   has_many :authorships, dependent: :delete_all
   has_many :authors, through: :authorships
 
+  has_many :categorizations, dependent: :delete_all
+  has_many :categories, through: :categorizations
+
   before_save :default_values
   default_scope -> { order("rating DESC NULLS LAST") } #postgres sorts with NULLS first by default
   

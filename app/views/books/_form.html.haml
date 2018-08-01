@@ -4,7 +4,7 @@
     = f.text_field :name, class: "form-control"
   .form-group
     %label Автор
-    = f.collection_select :author_ids, Author.order(:name), :id, :name, {}, {class: "form-control js-select", multiple: true}
+    = f.collection_select :author_ids, Author.order(:name), :id, :name, {}, {class: "form-control js-select-new", multiple: true}
   .form-group
     %label Иллюстратор
     = f.text_field :illustrator, class: "form-control"
