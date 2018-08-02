@@ -6,10 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Author.find_or_create_by(name: 'Али Митгуш') do |author|
+  author.date_of_birth = '21.08.1935'
+  author.country = Country.find_by_name('Германия')
+  author.description = 'Считается автором виммельбухов. Лауреат премии Андерсона 1978 года.'
+end
+
 Author.find_or_create_by(name: 'Владимир Сутеев') do |author|
   author.date_of_birth = '5.07.1903'
   author.date_of_death = '8.03.1993'
   author.country = Country.find_by_name('СССР')
+end
+
+Book.find_or_create_by(name: 'Пиратская книга') do |book|
+  book.authors = Author.where(name: 'Али Митгуш')
+  book.illustrator = 'Али Митгуш'
+  #book.creation_year = 1963
+  book.info = 'Пиратская книга - это книжка, которую можно "читать" очень много раз.
+ В ней в мельчайших деталях рассказывается про то, как пираты грабят корабль, куда
+девают награбленное, как устроен их быт. В конце книги добро побеждает зло и военный
+корабль приходит на пиратский остров и восстанавливает справедливость. Как и в большинстве
+виммельбухов очень много детальных картинок. Где-то смешных, где-то спорных, но они про
+про наш мир, с которым так или иначе сталкивается ребенок.'
+  book.publishing_house = 'Мелик-Пашаев'
+  book.start_age = 2
+  book.finish_age = 8
+  book.user = User.where(name: 'Василий', lastname: 'Сикорский').first
 end
 
 Book.find_or_create_by(name: 'Сказки и картинки') do |book|
