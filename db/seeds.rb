@@ -6,6 +6,73 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+['Лауреат медали Кальдекота', "Лауреат премии Андерсена", "Лауреат премии Астрид Линдгрен",
+"Лауреат медали Ньюбери"].each { |c| Category.find_or_create_by(name: c) }
+
+%w[Дания Швеция].each { |c| Country.create(name: c) }
+
+Author.find_or_create_by(name: 'Филип Стед') do |author|
+  #author.date_of_birth = '25.09.1964' didn't find his date of birth
+  author.country = Country.find_by_name('США')
+  #author.description = ''
+end
+
+Author.find_or_create_by(name: 'Свен Нурдквист') do |author|
+  author.date_of_birth = '30.04.1946'
+  author.country = Country.find_by_name('Швеция')
+  author.description = 'Лауреат премии Астрид Линдгрен'
+end
+
+Author.find_or_create_by(name: 'Ларс Клинтинг') do |author|
+  author.date_of_birth = '25.04.1948'
+  author.date_of_death = '9.10.2006'
+  author.country = Country.find_by_name('Швеция')
+  #author.description = 'Гений детской литературы в СССР'
+end
+
+Author.find_or_create_by(name: 'Николай Носов') do |author|
+  author.date_of_birth = '23.11.1908'
+  author.date_of_death = '26.07.1976'
+  author.country = Country.find_by_name('СССР')
+  author.description = 'Гений детской литературы в СССР'
+end
+
+
+Author.find_or_create_by(name: 'Виктор Драгунский') do |author|
+  author.date_of_birth = '1.12.1913'
+  author.date_of_death = '6.05.1972'
+  author.country = Country.find_by_name('СССР')
+  #author.description = 'Гений детской литературы в СССР'
+end
+
+Author.find_or_create_by(name: 'Юрий Дружков') do |author|
+  author.date_of_birth = '18.04.1927'
+  author.date_of_death = '30.12.1983'
+  author.country = Country.find_by_name('СССР')
+  author.description = 'Настоящая фамилия - Постников'
+end
+
+Author.find_or_create_by(name: 'Ида Йессен') do |author|
+  author.date_of_birth = '25.09.1964'
+  author.country = Country.find_by_name('Дания')
+  #author.description = ''
+end
+
+
+Author.find_or_create_by(name: 'Женевьева Юрье') do |author|
+  author.date_of_birth = '24.08.1927'
+  author.country = Country.find_by_name('Франция')
+  #author.description = ''
+end
+
+
+Author.find_or_create_by(name: 'Борис Заходер') do |author|
+  author.date_of_birth = '09.09.1918'
+  author.date_of_death = '7.11.2000'
+  author.country = Country.find_by_name('СССР')
+  #author.description = ''
+end
+
 Author.find_or_create_by(name: 'Али Митгуш') do |author|
   author.date_of_birth = '21.08.1935'
   author.country = Country.find_by_name('Германия')
