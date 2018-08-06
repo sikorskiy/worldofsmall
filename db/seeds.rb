@@ -9,7 +9,7 @@
 ['Лауреат медали Кальдекота', "Лауреат премии Андерсена", "Лауреат премии Астрид Линдгрен",
 "Лауреат медали Ньюбери"].each { |c| Category.find_or_create_by(name: c) }
 
-%w[Дания Швеция].each { |c| Country.create(name: c) }
+%w[Дания Швеция].each { |c| Country.find_or_create(name: c) }
 
 Author.find_or_create_by(name: 'Филип Стед') do |author|
   #author.date_of_birth = '25.09.1964' didn't find his date of birth
