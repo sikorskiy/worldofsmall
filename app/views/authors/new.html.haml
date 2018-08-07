@@ -1,0 +1,14 @@
+- provide :title, "Создание нового автора"
+- content_for :bigtext, "Создание нового автора"
+- content_for :smalltext, "Заполняйте все поля аккуратно"
+.container
+  .row
+    - if logged_in?
+      .col-md-8
+        = render partial: "form", locals: {button_name: "Сохранить"}
+    - else
+      %p
+        Только зарегистрированные пользователи могут создавать новые книги
+
+
+
