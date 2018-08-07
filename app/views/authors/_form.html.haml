@@ -1,0 +1,17 @@
+= form_for @author do |f|
+  .form-group
+    %label Имя автора:
+    = f.text_field :name, class: "form-control"
+  .form-group
+    %label Страна:
+    = f.collection_select :country_id, Country.order(:name), :id, :name, {}, { class: "form-control js-select" }
+  .form-group
+    %label Дата рождения:
+    = f.date_field :date_of_birth, class: "form-control"
+  .form-group
+    %label Дата смерти:
+    = f.text_field :date_of_death, class: "form-control"
+  .form-group
+    %label Об авторе:
+    = f.text_area :description, class: "form-control", rows: '5'
+  = f.submit button_name + " автора", class: "btn button btn-success"

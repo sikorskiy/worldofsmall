@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'authors/new'
+  get 'authors/update'
+  get 'authors/edit'
+  get 'authors/create'
+  get 'authors/index'
+  get 'authors/resources'
   ActiveAdmin.routes(self)
   get 'wishbooks/new'
   root "books#home"
@@ -9,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :authors
 
   get "/about", to: "books#about"
   get '/searchuser', to: "users#search"

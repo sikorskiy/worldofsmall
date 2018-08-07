@@ -1,0 +1,16 @@
+- provide :title, @author.name
+- content_for :bigtext, "Об авторе: #{@author.name}"
+- content_for :smalltext, "Информация про #{@author.name}: страна происхождения, краткая информация"
+.container
+  .row
+    .col-sm-12
+      %h4
+        = @author.name
+      %h5
+        = 'Страна: ' + @author.country.name
+      %h5
+        = 'Дата рождения: ' + @author.date_of_birth.to_s
+      %h5
+        = 'Дата смерти: ' + @author.date_of_death.to_s
+      %h5
+        = 'Краткая информация: ' + (@author.description.blank? ? 'нет' : @author.description)

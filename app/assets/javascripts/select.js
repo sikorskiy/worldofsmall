@@ -2,7 +2,7 @@
 document.addEventListener("turbolinks:load", function() { //don't know why, but this is some turbolinks issues
     $('.js-select-new').select2({
         theme: "bootstrap",
-        tags: true,
+        //tags: true,
         allowClear: true,
         width: "100%",
 

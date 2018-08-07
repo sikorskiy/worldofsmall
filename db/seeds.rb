@@ -17,6 +17,12 @@ Author.find_or_create_by(name: 'Филип Стед') do |author|
   #author.description = ''
 end
 
+Author.find_or_create_by(name: 'Геннадий Спирин') do |author|
+  author.date_of_birth = '25.12.1948'
+  author.country = Country.find_by_name('СССР')
+  author.description = 'Эмигрировал в США в 1992 году, один из наиболее известных русских иллюстраторов за границей'
+end
+
 Author.find_or_create_by(name: 'Свен Нурдквист') do |author|
   author.date_of_birth = '30.04.1946'
   author.country = Country.find_by_name('Швеция')

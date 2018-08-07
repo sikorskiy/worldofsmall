@@ -18,7 +18,8 @@
           %li
             %strong
               Автор:
-            = @book.authors.collect(&:name).join(', ')
+            - @book.authors.each do |a|
+              = link_to a.name + ' ', author_path(a)
           %li
             %strong
               Иллюстратор:
