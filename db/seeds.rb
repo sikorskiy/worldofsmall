@@ -11,6 +11,12 @@
 
 %w[Дания Швеция СССР США Франция].each { |c| Country.find_or_create_by(name: c) }
 
+Author.find_or_create_by(name: 'Крис Рашка') do |author|
+  author.date_of_birth = '06.03.1959'
+  author.country = Country.find_by_name('США')
+  #author.description = ''
+end
+
 Author.find_or_create_by(name: 'Филип Стед') do |author|
   #author.date_of_birth = '25.09.1964' didn't find his date of birth
   author.country = Country.find_by_name('США')
@@ -89,6 +95,17 @@ Author.find_or_create_by(name: 'Владимир Сутеев') do |author|
   author.date_of_birth = '5.07.1903'
   author.date_of_death = '8.03.1993'
   author.country = Country.find_by_name('СССР')
+end
+
+Book.find_or_create_by(name: 'Мяч для Дейзи') do |book|
+  book.authors = Author.where(name: 'Крис Рашка')
+  book.illustrator = 'Крис Рашка'
+  book.creation_year = 2011
+  book.info = 'Книга ялвяется лауреатом медали Кальдекотта 2011 года. Рассказывает про потерю любимой игрушки. Талантливо и красочно описывает печаль и потерю, любовь и привязанность.'
+  book.publishing_house = 'Карьера Пресс'
+  book.start_age = 2
+  book.finish_age = 6
+  book.user = User.where(name: 'Василий', lastname: 'Сикорский').first
 end
 
 Book.find_or_create_by(name: 'Пиратская книга') do |book|
