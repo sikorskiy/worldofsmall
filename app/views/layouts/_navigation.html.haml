@@ -10,7 +10,7 @@
         = link_to "Список желаний", searchuser_path, class: "nav-link"
       %li.nav-item{class: "#{current_class?(books_path)}"}
         = link_to "Все книги", books_path, class: "nav-link"
-      - if current_user.is_admin?
+      - if current_user&.is_admin?
         %li.nav-item.dropdown
           = link_to 'Новая книга', '#', class: 'nav-link dropdown-toggle', id: "navbarDropdown", "aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"
           .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
